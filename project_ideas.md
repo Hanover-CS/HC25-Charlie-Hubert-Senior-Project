@@ -1,6 +1,6 @@
 # My Project Ideas
 
-## Idea 1: Golf Facebook
+## Idea 1: Golf Media App
 ### This app would allow golfers to connect with their friends and post their own scores while also allowing them to see your friends scores and what courses they play at. 
 ### Can recommend other courses and people to play/connect with.
 ### GPS to show how far away you are from the holes so you do not need to buy a 400$ range finder.

@@ -10,3 +10,6 @@
  This would be a card that is inside of your phone that can save students from having to carry around their physical Hanover ID everywhere they go.
  This way students can add it to their apple wallet or openpath and do not have to risk losing their physical ID and paying a fee.
  This would allow students to use mealswipes and get packages and print out papers with just their phone.
+### Competitor: TRANSACT 
+Has 1,111 colleges using their app to connect all campus services to one card that they have in their app, compatible with apple wallet and apple watch
+I am thinking about making an app that literally is just the equivalent of a hanover ID but in your phone, this way you do not need to install all of the scanners that are specific to TRANSACT

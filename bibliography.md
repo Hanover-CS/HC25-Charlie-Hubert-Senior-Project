@@ -6,6 +6,10 @@ https://support.apple.com/en-us/118274#:~:text=You%20can%20use%20your%20student,
 https://www.printplast.com/student-id-cards/#:~:text=Student%20ID%20cards%20with%20RFID%20rely%20on%20electromagnetic%20fields%20to,some%20memory%20and%20processing%20capacity.
 ### TRANSACT
 https://www.transactcampus.com/solutions/campus-id
+### 
+Has 1,111 colleges using their app to connect all campus services to one card that they have in their app, compatible with apple wallet and apple watch
+I am thinking about making an app that literally is just the equivalent of a hanover ID but in your phone, this way you do not need to install all of the scanners that are specific to TRANSACT
+
 ### TouchNet
 https://www.touchnet.com/id-management/onecard-campus-id
 

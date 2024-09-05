@@ -4,9 +4,9 @@ This would be an app/part of the Hanover College website that takes your current
 ### Features
 **1.** The buildings and other key locations can be hovered over or clicked on
 
-    1. When hovered over it will show you the name of the building/location and give you important information on that site for the day. (Ex. Hover over the CC and it will tell you the menu for lunch if it is lunch time, or hover over the soccer field and it will show you that there is a womens soccer game at 3:30 tomorrow there)
+    i. When hovered over it will show you the name of the building/location and give you important information on that site for the day. (Ex. Hover over the CC and it will tell you the menu for lunch if it is lunch time, or hover over the soccer field and it will show you that there is a womens soccer game at 3:30 tomorrow there)
     
-    2. If the building is clicked on it will show you a brief description of the building and a picture of it along with the other information found by hovering.
+    ii. If the building is clicked on it will show you a brief description of the building and a picture of it along with the other information found by hovering.
     
 **2.** You can map how long it would take you to get to your desired location by walking/biking/driving.
 

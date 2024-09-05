@@ -9,6 +9,7 @@ This would be an app/part of the Hanover College website that takes your current
 
 The idea for this app is to create a more connected campus and student body. Some of the advertisements posted on walls get walked by without a second thought, emails from faculty get clicked on and clicked off to remove the notification, but if someone was on this app and saw there was bingo at the WAC in 20 minutes then they would be much more inclined to attend.
 
+## Similar Existing Solutions
 
 
 

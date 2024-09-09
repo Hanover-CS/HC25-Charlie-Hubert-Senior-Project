@@ -64,3 +64,10 @@ This map allows you to see the layout of the campus and click on key places. How
 6. **Testing and Deployment**: Test the application thoroughly across different devices and browsers. Deploy using services like Vercel, Netlify, or AWS.
 
 By combining these technologies, I will be able to create an interactive and informative campus map with 3D models, search capabilities, and routing features.
+
+## References
+[1] A. Author, B. Author, and C. Author, "Title of the Paper," Journal Name, vol. X, no. Y, pp. Z-Z, Month, Year.
+
+[2] D. Author and E. Author, Title of the Book, Xth ed. City, Country: Publisher, Year.
+
+[3] F. Author, "Title of the Conference Paper," in Proceedings of the Conference Name, City, Country, Month, Year, pp. X-Y.

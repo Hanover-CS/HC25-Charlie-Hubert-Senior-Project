@@ -68,7 +68,6 @@ By combining these technologies, I will be able to create an interactive and inf
 ## References
 [1] Concept3D, "Interactive Map Features," Concept3D. [Online]. Available: https://concept3d.com/product-page-interactive-map/features/?_gl=1*12rrgzu*_up*MQ..&gclid=CjwKCAjwuMC2BhA7EiwAmJKRrDZI_3hPRQi6kGLFb-2WP2NFLb8a3ckXBki_dc-FGMmmuSJ-QnnC4RoCwfwQAvD_BwE. [Accessed: Sep. 8, 2024].
 
+[2] StudentBridge, "Using Campus Maps for Higher Ed Communication," StudentBridge Blog. [Online]. Available: https://studentbridge.com/blog/using-campus-maps-for-higher-ed-communication#:~:text=Campus%20maps%20can%20be%20essential,%2C%20offices%2C%20and%20other%20facilities. [Accessed: Sep. 8, 2024].
 
-[2] D. Author and E. Author, Title of the Book, Xth ed. City, Country: Publisher, Year.
-
-[3] F. Author, "Title of the Conference Paper," in Proceedings of the Conference Name, City, Country, Month, Year, pp. X-Y.
+[3] Mapme, "Top 5 Benefits of Having an Interactive Map on Your Website," Mapme Blog. [Online]. Available: https://mapme.com/blog/top-5-benefits-of-having-an-interactive-map-on-your-website/#:~:text=Interactive%20maps%20have%20grown%20past,us%20understand%20complicated%20information%20easily. [Accessed: Sep. 8, 2024].

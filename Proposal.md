@@ -66,7 +66,8 @@ This map allows you to see the layout of the campus and click on key places. How
 By combining these technologies, I will be able to create an interactive and informative campus map with 3D models, search capabilities, and routing features.
 
 ## References
-[1] A. Author, B. Author, and C. Author, "Title of the Paper," Journal Name, vol. X, no. Y, pp. Z-Z, Month, Year.
+[1] Concept3D, "Interactive Map Features," Concept3D. [Online]. Available: https://concept3d.com/product-page-interactive-map/features/?_gl=1*12rrgzu*_up*MQ..&gclid=CjwKCAjwuMC2BhA7EiwAmJKRrDZI_3hPRQi6kGLFb-2WP2NFLb8a3ckXBki_dc-FGMmmuSJ-QnnC4RoCwfwQAvD_BwE. [Accessed: Sep. 8, 2024].
+
 
 [2] D. Author and E. Author, Title of the Book, Xth ed. City, Country: Publisher, Year.
 

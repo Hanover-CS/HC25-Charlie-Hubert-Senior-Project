@@ -1,6 +1,6 @@
 # 3D Interactive Map of Hanover College Campus
 ## Project and Features
-This would be an app/part of the Hanover College website that takes your current location on Hanover College Campus and marks it on a 3D map of the campus with the blue dot that you see frequently used on most maps. 
+As of late, the popularity of interactive maps has exploded as businesses and organizations discover the benefits and value they bring to their users. For many of us, the best thing about these maps is that they’re easy to use. We can zoom in, rotate, and see new details instantly. Interactive maps have grown past being simple navigation tools. Now, they serve as platforms for many different applications like checking out properties, planning events, or city guides. By giving us a visual and interactive way to see real-time updates, these maps help us understand complicated information easily. I would be implementing all of these advantages into an app, or as a part of the Hanover College website. This would cause more internet traffic for the college, help get vital information out to students quickly, and result in a more connected student body.
 ### Features
 1. The buildings and other key locations can be hovered over or clicked on
     - When hovered over it will show you the name of the building/location and give you important information on that site for the day. (Ex. Hover over the CC and it will tell you the menu for lunch if it is lunch time, or hover over the soccer field and it will show you that there is a womens soccer game at 3:30 tomorrow there)
@@ -8,7 +8,7 @@ This would be an app/part of the Hanover College website that takes your current
 2. You can map how long it would take you to get to your desired location by walking/biking/driving.
 3. Important Locations on campus would be 3D
 4. You can search for locations and it will take you to them on the map
-
+5. It takes your current location on Hanover College Campus and marks it with the blue dot that you see frequently used on most maps. 
 The idea for this app is to create a more connected campus and student body. Some of the advertisements posted on walls get walked by without a second thought, emails from faculty get clicked on and clicked off to remove the notification, but if someone was on this app and saw there was bingo at the WAC in 20 minutes or a recital at the CFA tonight, then they would be much more inclined to attend.
 
 ## Similar Existing Solutions

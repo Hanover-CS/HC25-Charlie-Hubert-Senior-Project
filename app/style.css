@@ -10,3 +10,50 @@ html, body {
   bottom: 0;
   width: 100%;
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hidden off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: rgb(39, 8, 215);
+  border: 5px solid #f10707;
+  border-radius: 20px;
+  color: white;
+  overflow: auto;
+  transition: 0.5s;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.sidebar.show {
+  left: 0; /* Show the sidebar */
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+#feature-image {
+  margin-top: 20px;
+  max-width: 100%;
+  display: none;
+}
+#info {
+  margin-top: 20px;
+}
+.popup {
+  position: absolute;
+  background-color: rgb(39, 8, 215);
+  padding: 5px;
+  border: 1px solid #f10707;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+}

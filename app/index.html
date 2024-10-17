@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using OpenLayers with Vite</title>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script type="module" src="./main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanover Map</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+</head>
+<body>
+    <!-- Sidebar to show feature info -->
+    <div class="sidebar" id="sidebar">
+        <span class="closebtn" onclick="closeNav()">×</span>
+        <div id="name">&nbsp;</div>
+        <img id="feature-image" src="" alt="" style="max-width: 100%; display: none;">
+        <div id="info">&nbsp;</div>
+    </div>
+
+    <!-- Map container -->
+    <div id="map" class="map"></div>
+
+    <!-- Popup for showing feature name on hover -->
+    <div id="popup" class="popup"></div>
+
+    <script type="module" src="main.js"></script>
+
+    <script>
+        // Function to open the sidebar
+        function openNav() {
+            document.getElementById("sidebar").classList.add('show');
+        }
+
+        // Function to close the sidebar
+        function closeNav() {
+            document.getElementById("sidebar").classList.remove('show');
+        }
+    </script>
+
+</body>
 </html>

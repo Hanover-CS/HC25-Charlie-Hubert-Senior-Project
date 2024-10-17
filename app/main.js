@@ -64,6 +64,7 @@ const map = new Map({
   view: new View({
     center: fromLonLat(coords.hanoverCollege), // Center on Hanover College
     zoom: 16,
+    minZoom: 16
   }),
 });
 

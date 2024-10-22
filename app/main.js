@@ -19,11 +19,103 @@ const coords = {
   tennis: [-85.465698, 38.717900],
 };
 
+const soccerSchedule = [
+  { date: "2024-08-19", time: "5:00 PM CST", location: "Evansville, IN", opponent: "University of Evansville", result: "" },
+  { date: "2024-08-20", time: "4:30 PM", location: "Columbus, IN", opponent: "IUPUC", result: "" },
+  { date: "2024-08-30", time: "7:30 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "W 3-1" },
+  { date: "2024-09-01", time: "5:30 PM", location: "Louisville, KY", opponent: "Centre College", result: "L 1-3" },
+  { date: "2024-09-06", time: "5:00 PM", location: "Westerville, OH", opponent: "Otterbein University", result: "L 0-1" },
+  { date: "2024-09-07", time: "5:00 PM", location: "Columbus, OH", opponent: "Capital University", result: "T 1-1" },
+  { date: "2024-09-13", time: "5:00 PM", location: "Greencastle, IN", opponent: "DePauw University", result: "L 0-2" },
+  { date: "2024-09-14", time: "4:00 PM", location: "Hanover, IN", opponent: "Wilmington College", result: "T 3-3" },
+  { date: "2024-09-18", time: "5:00 PM", location: "Crawfordsville, IN", opponent: "Wabash College", result: "W 1-0" },
+  { date: "2024-09-21", time: "3:30 PM", location: "Hanover, IN", opponent: "Asbury University (Ky.)", result: "L 1-2" },
+  { date: "2024-09-29", time: "5:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "L 0-3" },
+  { date: "2024-10-05", time: "3:30 PM", location: "Hanover, IN", opponent: "Bluffton University", result: "W 2-0" },
+  { date: "2024-10-09", time: "3:30 PM", location: "Hanover, IN", opponent: "Rose-Hulman", result: "T 0-0" },
+  { date: "2024-10-12", time: "3:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 3-1" },
+  { date: "2024-10-16", time: "3:30 PM", location: "Hanover, IN", opponent: "Mount St. Joseph University", result: "W 9-0" },
+  { date: "2024-10-19", time: "3:30 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 5-0" },
+  { date: "2024-10-23", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "" },
+  { date: "2024-10-26", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "" },
+  { date: "2024-10-29", time: "7:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "" }
+];
+
+const footballSchedule = [
+  { date: "2024-09-07", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centre College", result: "L 12-27" },
+  { date: "2024-09-14", time: "6:00 PM", location: "Indianapolis, IN", opponent: "Butler University", result: "L 0-53" },
+  { date: "2024-09-21", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "The University of Olivet", result: "W 56-14" },
+  { date: "2024-10-05", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Mount St. Joseph University", result: "L 41-49" },
+  { date: "2024-10-12", time: "2:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Rose-Hulman", result: "W 37-16" },
+  { date: "2024-10-19", time: "1:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "W 35-0" },
+  { date: "2024-10-26", time: "1:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "" },
+  { date: "2024-11-02", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Bluffton University", result: "" },
+  { date: "2024-11-09", time: "1:30 PM", location: "Defiance, OH", opponent: "Defiance College", result: "" },
+  { date: "2024-11-16", time: "1:30 PM", location: "Franklin, IN", opponent: "Franklin College", result: "" }
+];
+
+const tennisSchedule = []
+
+// Function to get recent and next games for a given schedule
+function getRecentAndUpcomingGames(schedule) {
+  const now = new Date();
+  let recentGame = null;
+  let nextGame = null;
+
+  for (const game of schedule) {
+    const gameDate = new Date(game.date + ' ' + game.time);
+    
+    if (gameDate < now && (!recentGame || gameDate > new Date(recentGame.date + ' ' + recentGame.time))) {
+      recentGame = game;
+    } else if (gameDate >= now && (!nextGame || gameDate < new Date(nextGame.date + ' ' + nextGame.time))) {
+      nextGame = game;
+    }
+  }
+
+  return { recentGame, nextGame };
+}
+
+// Function to display games in the sidebar
+function displayGames(schedule) {
+  const { recentGame, nextGame } = getRecentAndUpcomingGames(schedule);
+  const eventsDiv = document.getElementById("events");
+  eventsDiv.innerHTML = ""; // Clear existing content
+
+  if (recentGame) {
+    eventsDiv.innerHTML += `
+      <div class="game">
+          <h4>Most Recent Game</h4>
+          <p><strong>Date:</strong> ${recentGame.date}<br>
+          <strong>Time:</strong> ${recentGame.time}<br>
+          <strong>Location:</strong> ${recentGame.location}<br>
+          <strong>Opponent:</strong> ${recentGame.opponent}<br>
+          <strong>Result:</strong> ${recentGame.result || "Not available"}</p>
+      </div>
+    `;
+  } else {
+    eventsDiv.innerHTML += `<p>No recent games found.</p>`;
+  }
+
+  if (nextGame) {
+    eventsDiv.innerHTML += `
+      <div class="game">
+          <h4>Next Upcoming Game</h4>
+          <p><strong>Date:</strong> ${nextGame.date}<br>
+          <strong>Time:</strong> ${nextGame.time}<br>
+          <strong>Location:</strong> ${nextGame.location}<br>
+          <strong>Opponent:</strong> ${nextGame.opponent}<br>
+      </div>
+    `;
+  } else {
+    eventsDiv.innerHTML += `<p>No upcoming games found.</p>`;
+  }
+}
+
 const stadiumFeature = new Feature({
   geometry: new Point(fromLonLat(coords.stadium)), 
   imageUrl: 'images/stadiumSidebar.webp',
   info: "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.",
-  name: "Stadium"
+  name: "Stadium",
 });
 
 // Create a feature for the soccer field
@@ -34,12 +126,14 @@ const soccerFeature = new Feature({
   name: "Soccer Fields"
 });
 
+
 // Create a feature for the tennis courts
 const tennisFeature = new Feature({
   geometry: new Point(fromLonLat(coords.tennis)),
   imageUrl: 'images/tennisSidebar.webp',
   info: "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.",
-  name: "Tennis Courts"
+  name: "Tennis Courts",
+  schedule: 'TBA'
 });
 
 // Create a vector source and add the feature
@@ -125,6 +219,7 @@ map.on('click', (evt) => {
   const name = document.getElementById('name');
   const info = document.getElementById('info');
   const image = document.getElementById('feature-image');
+  const events = document.getElementById('events');
 
   if (feature) {
     // Update the sidebar content with the feature's name
@@ -137,6 +232,16 @@ map.on('click', (evt) => {
       image.style.display = 'block';  // Show the image
     } else {
       image.style.display = 'none';  // Hide the image if no URL is present
+    }
+
+    if (feature.get('name') === 'Soccer Fields') {
+      displayGames(soccerSchedule);  // Load the games
+    }
+    else if (feature.get('name') === 'Stadium') {
+      displayGames(footballSchedule);  // Load the games
+    }
+    else if (feature.get('name') === 'Tennis Courts'){
+      displayGames(tennisSchedule);  // Load the games
     }
 
     // Open the sidebar when a feature is clicked

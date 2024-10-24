@@ -14,7 +14,7 @@ import stadium from "./assets/images/stadium.png";
 import soccerField from "./assets/images/soccerField.png";
 import tennis from "./assets/images/tennis.png";
 import stadiumSidebar from "./assets/images/stadiumSidebar.webp";
-import soccerSidebar from "./assets/images/soccerSidebar.webp";
+import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.webp";
 
 // Coordinates

@@ -13,9 +13,9 @@ import { fromLonLat } from 'ol/proj.js';
 import stadium from "./assets/images/stadium.png";
 import soccerField from "./assets/images/soccerField.png";
 import tennis from "./assets/images/tennis.png";
-import stadiumSidebar from "./assets/images/stadiumSidebar.webp";
+import stadiumSidebar from "./assets/images/stadiumSidebar.png";
 import soccerSidebar from "./assets/images/soccerSidebar.png";
-import tennisSidebar from "./assets/images/tennisSidebar.webp";
+import tennisSidebar from "./assets/images/tennisSidebar.png";
 
 // Coordinates
 const coords = {

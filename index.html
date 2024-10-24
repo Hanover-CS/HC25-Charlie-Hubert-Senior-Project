@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanover Map</title>
+  <script type="module" crossorigin src="/assets/index-BC9MaTGR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DhsVs7_D.css">
+</head>
+<body>
+    <!-- Sidebar to show feature info -->
+    <div class="sidebar" id="sidebar">
+        <span class="closebtn" onclick="closeNav()">×</span>
+        <div id="name">&nbsp;</div>
+        <img id="feature-image" src="" alt="" style="max-width: 100%; display: none;">
+        <div id="info">&nbsp;</div>
+        <div id="events">&nbsp;</div> </div>
+    </div>
+
+    <!-- Map container -->
+    <div id="map" class="map"></div>
+
+    <!-- Popup for showing feature name on hover -->
+    <div id="popup" class="popup"></div>
+
+
+    <script>
+        // Function to open the sidebar
+        function openNav() {
+            document.getElementById("sidebar").classList.add('show');
+        }
+
+        // Function to close the sidebar
+        function closeNav() {
+            document.getElementById("sidebar").classList.remove('show');
+        }
+    </script>
+
+</body>
+</html>

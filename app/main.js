@@ -11,8 +11,8 @@ import Style from 'ol/style/Style.js';
 import OSM from 'ol/source/OSM.js';
 import { fromLonLat } from 'ol/proj.js';
 import stadium from "./assets/images/stadium.png";
-import tennis from "./assets/images/tennis.png";
 import soccerField from "./assets/images/soccerField.png";
+import tennis from "./assets/images/tennis.png";
 
 
 // Coordinates
@@ -210,9 +210,9 @@ const setIconStyle = (feature, src) => {
 };
 
 // Set styles for both features initially
-setIconStyle(soccerFeature, 'assets/images/soccerField.png'); // Soccer Field image
-setIconStyle(stadiumFeature, 'assets/images/stadium.png'); // Stadium image
-setIconStyle(tennisFeature, 'assets/images/tennis.png'); // tennis image
+setIconStyle(soccerFeature, soccerField); // Soccer Field image
+setIconStyle(stadiumFeature, stadium); // Stadium image
+setIconStyle(tennisFeature, tennis); // tennis image
 
 // Update icon styles on zoom change
 map.on('moveend', () => {

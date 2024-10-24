@@ -20,25 +20,46 @@ const coords = {
 };
 
 const soccerSchedule = [
-  { date: "2024-08-19", time: "5:00 PM CST", location: "Evansville, IN", opponent: "University of Evansville", result: "" },
-  { date: "2024-08-20", time: "4:30 PM", location: "Columbus, IN", opponent: "IUPUC", result: "" },
-  { date: "2024-08-30", time: "7:30 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "W 3-1" },
-  { date: "2024-09-01", time: "5:30 PM", location: "Louisville, KY", opponent: "Centre College", result: "L 1-3" },
-  { date: "2024-09-06", time: "5:00 PM", location: "Westerville, OH", opponent: "Otterbein University", result: "L 0-1" },
-  { date: "2024-09-07", time: "5:00 PM", location: "Columbus, OH", opponent: "Capital University", result: "T 1-1" },
-  { date: "2024-09-13", time: "5:00 PM", location: "Greencastle, IN", opponent: "DePauw University", result: "L 0-2" },
-  { date: "2024-09-14", time: "4:00 PM", location: "Hanover, IN", opponent: "Wilmington College", result: "T 3-3" },
-  { date: "2024-09-18", time: "5:00 PM", location: "Crawfordsville, IN", opponent: "Wabash College", result: "W 1-0" },
-  { date: "2024-09-21", time: "3:30 PM", location: "Hanover, IN", opponent: "Asbury University (Ky.)", result: "L 1-2" },
-  { date: "2024-09-29", time: "5:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "L 0-3" },
-  { date: "2024-10-05", time: "3:30 PM", location: "Hanover, IN", opponent: "Bluffton University", result: "W 2-0" },
-  { date: "2024-10-09", time: "3:30 PM", location: "Hanover, IN", opponent: "Rose-Hulman", result: "T 0-0" },
-  { date: "2024-10-12", time: "3:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 3-1" },
-  { date: "2024-10-16", time: "3:30 PM", location: "Hanover, IN", opponent: "Mount St. Joseph University", result: "W 9-0" },
-  { date: "2024-10-19", time: "3:30 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 5-0" },
-  { date: "2024-10-23", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "" },
-  { date: "2024-10-26", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "" },
-  { date: "2024-10-29", time: "7:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "" }
+  { date: "2024-08-19", time: "5:00 PM CST", location: "Evansville, IN", opponent: "University of Evansville", result: "", type: "Men's Soccer" },
+  { date: "2024-08-20", time: "4:30 PM", location: "Columbus, IN", opponent: "IUPUC", result: "", type: "Men's Soccer" },
+  { date: "2024-08-30", time: "7:30 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "W 3-1", type: "Men's Soccer" },
+  { date: "2024-09-01", time: "5:30 PM", location: "Louisville, KY", opponent: "Centre College", result: "L 1-3", type: "Men's Soccer" },
+  { date: "2024-09-06", time: "5:00 PM", location: "Westerville, OH", opponent: "Otterbein University", result: "L 0-1", type: "Men's Soccer" },
+  { date: "2024-09-07", time: "5:00 PM", location: "Columbus, OH", opponent: "Capital University", result: "T 1-1", type: "Men's Soccer" },
+  { date: "2024-09-13", time: "5:00 PM", location: "Greencastle, IN", opponent: "DePauw University", result: "L 0-2", type: "Men's Soccer" },
+  { date: "2024-09-14", time: "4:00 PM", location: "Hanover, IN", opponent: "Wilmington College", result: "T 3-3", type: "Men's Soccer" },
+  { date: "2024-09-18", time: "5:00 PM", location: "Crawfordsville, IN", opponent: "Wabash College", result: "W 1-0", type: "Men's Soccer" },
+  { date: "2024-09-21", time: "3:30 PM", location: "Hanover, IN", opponent: "Asbury University (Ky.)", result: "L 1-2", type: "Men's Soccer" },
+  { date: "2024-09-29", time: "5:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "L 0-3", type: "Men's Soccer" },
+  { date: "2024-10-05", time: "3:30 PM", location: "Hanover, IN", opponent: "Bluffton University", result: "W 2-0", type: "Men's Soccer" },
+  { date: "2024-10-09", time: "3:30 PM", location: "Hanover, IN", opponent: "Rose-Hulman", result: "T 0-0", type: "Men's Soccer" },
+  { date: "2024-10-12", time: "3:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 3-1", type: "Men's Soccer" },
+  { date: "2024-10-16", time: "3:30 PM", location: "Hanover, IN", opponent: "Mount St. Joseph University", result: "W 9-0", type: "Men's Soccer" },
+  { date: "2024-10-19", time: "3:30 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 5-0", type: "Men's Soccer" },
+  { date: "2024-10-23", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "T 0-0", type: "Men's Soccer" },
+  { date: "2024-10-26", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "", type: "Men's Soccer" },
+  { date: "2024-10-29", time: "7:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Men's Soccer" }
+];
+
+const womensSoccerSchedule = [
+  { date: "2024-08-20", time: "6:00 PM", location: "Springfield, OH", opponent: "Wittenberg University", result: "" },
+  { date: "2024-08-24", time: "2:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Ohio Northern University", result: "" },
+  { date: "2024-08-30", time: "7:00 PM", location: "Columbus, OH", opponent: "Capital University", result: "W 2-1" },
+  { date: "2024-09-01", time: "2:00 PM", location: "Westerville, OH", opponent: "Otterbein University", result: "L 0-1" },
+  { date: "2024-09-07", time: "7:00 PM", location: "Wilmington, OH", opponent: "Wilmington College", result: "W 2-1" },
+  { date: "2024-09-14", time: "2:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Kenyon College", result: "W 6-0" },
+  { date: "2024-09-18", time: "5:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Asbury University (Ky.)", result: "W 3-1" },
+  { date: "2024-09-20", time: "6:00 PM (CST)", location: "Naperville, IL", opponent: "North Central College", result: "L 2-6" },
+  { date: "2024-09-24", time: "5:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Spalding University (Ky.)", result: "W 5-1" },
+  { date: "2024-09-29", time: "3:00 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "W 2-1" },
+  { date: "2024-10-05", time: "1:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Bluffton University", result: "W 6-0" },
+  { date: "2024-10-09", time: "7:00 PM", location: "Terre Haute, IN", opponent: "Rose-Hulman", result: "L 0-1" },
+  { date: "2024-10-12", time: "1:00 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 5-0" },
+  { date: "2024-10-16", time: "7:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "L 1-2" },
+  { date: "2024-10-19", time: "1:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Berea College (Ky.)", result: "W 10-0" },
+  { date: "2024-10-23", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Transylvania University", result: "" },
+  { date: "2024-10-26", time: "1:00 PM", location: "Richmond, IN", opponent: "Earlham College", result: "" },
+  { date: "2024-10-30", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Franklin College", result: "" }
 ];
 
 const footballSchedule = [
@@ -54,7 +75,17 @@ const footballSchedule = [
   { date: "2024-11-16", time: "1:30 PM", location: "Franklin, IN", opponent: "Franklin College", result: "" }
 ];
 
-const tennisSchedule = []
+const tennisSchedule = [
+  { date: "2024-09-07", time: "TBD", location: "Greencastle, IN", opponent: "DePauw University", result: "", type: "Men's Tennis" },
+  { date: "2024-09-20", time: "TBD", location: "St. Louis, MO", opponent: "Washington University in St. Louis", result: "", type: "Men's Tennis" },
+  { date: "2024-09-21", time: "TBD", location: "St. Louis, MO", opponent: "Washington University in St. Louis", result: "", type: "Men's Tennis" },
+  { date: "2024-10-05", time: "11:00 AM", location: "Hanover, IN", opponent: "Shawnee State University (Ohio)", result: "W 5-2", type: "Men's Tennis" },
+  { date: "2024-10-07", time: "3:00 PM", location: "Hanover, IN (Zeddies Tennis Center)", opponent: "Johnson University - Tennessee", result: "L 2-5", type: "Men's Tennis" },
+  { date: "2024-10-12", time: "12:00 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 7-0", type: "Men's Tennis" },
+  { date: "2024-10-19", time: "12:00 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 7-0", type: "Men's Tennis" }
+];
+
+const womensTennisSchedule = [];
 
 // Function to get recent and next games for a given schedule
 function getRecentAndUpcomingGames(schedule) {
@@ -199,6 +230,7 @@ map.on('pointermove', (evt) => {
 
   if (feature) {
     popup.innerHTML = feature.get('name'); // Show name in popup
+    //popup.innerHTML += 'Upcoming:';
     popup.style.display = 'block'; // Show popup
     popup.style.left = `${evt.pixel[0] + 15}px`; // makes the popup shown on the cursor
     popup.style.top = `${evt.pixel[1] - 15}px`; 

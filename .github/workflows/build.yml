@@ -31,11 +31,22 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Setup Pages
+        uses: action/configure-pages@v5
+        with:
+          destination: pages/docs
+
+      - name: Build Docs
+        uses: action/jekyll-build-pages@v1
+
+      - name: Copy Over the App
+        run: mv dist pages/app
+
       - name: Upload Static Files
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with: 
-          path: dist
+          path: pages
   deploy:
     environment:
       name: github-pages

@@ -1,6 +1,6 @@
 lsi: false
 safe: true
-baseurl: ""
+baseurl: "/HC25-Charlie-Hubert-Senior-Project/docs/"
 incremental: false
 highlighter: rouge
 gist:

@@ -1,5 +1,6 @@
 lsi: false
 safe: true
+basedir: ""
 incremental: false
 highlighter: rouge
 gist:

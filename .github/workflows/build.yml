@@ -31,6 +31,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy Over the App
+        run: |
+          mkdir -p pages
+          mv dist pages/app
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -38,11 +43,6 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           destination: pages/docs
-          
-      - name: Copy Over the App
-        run: |
-          mkdir -p pages
-          mv dist pages/app
 
       - name: Upload Static Files
         id: deployment

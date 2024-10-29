@@ -41,11 +41,10 @@ jobs:
 
       - name: Build Docs
         uses: actions/jekyll-build-pages@v1
-
-      - name: Move 
-        run: |
-          mv _site outputdir/docs
-
+        with:
+          source: docs
+          destination: outputdir/docs
+          
       - name: Upload Static Files
         id: deployment
         uses: actions/upload-pages-artifact@v3

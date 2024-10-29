@@ -42,7 +42,7 @@ jobs:
       - name: Build Docs
         uses: actions/jekyll-build-pages@v1
         with:
-          destination: outputdir/docs
+          destination: "./outputdir/docs"
 
       - name: Upload Static Files
         id: deployment

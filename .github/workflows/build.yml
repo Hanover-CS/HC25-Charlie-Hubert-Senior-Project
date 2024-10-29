@@ -35,7 +35,7 @@ jobs:
         run: |
           mkdir -p pages
           mv dist pages/app
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -48,6 +48,12 @@ jobs:
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with: 
+          path: pages
+
+      - name: Pages Folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-files
           path: pages
   deploy:
     environment:

@@ -33,12 +33,12 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          destination: pages/docs
 
       - name: Build Docs
         uses: actions/jekyll-build-pages@v1
-
+        with:
+          destination: pages/docs
+          
       - name: Copy Over the App
         run: |
           mkdir -p pages

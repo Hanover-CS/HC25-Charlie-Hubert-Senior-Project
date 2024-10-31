@@ -10,6 +10,39 @@ html, body {
   bottom: 0;
   width: 100%;
 }
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+  z-index: 10; /* Ensures it's above the map */
+}
+
+/* Styles for the search input and button */
+#location-input {
+  padding: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 20px 0 0 20px; /* Rounded left corners */
+  outline: none;
+  width: 300px; /* Set your desired width */
+}
+
+#search-button {
+  padding: 10px 15px;
+  border: 2px solid #007BFF;
+  border-left: none; /* Remove left border */
+  border-radius: 0 20px 20px 0; /* Rounded right corners */
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
 .sidebar {
   position: fixed;
   top: 0;

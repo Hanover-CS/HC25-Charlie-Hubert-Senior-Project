@@ -43,8 +43,8 @@ const soccerSchedule = [
   { date: "2024-10-16", time: "3:30 PM", location: "Hanover, IN", opponent: "Mount St. Joseph University", result: "W 9-0", type: "Men's Soccer" },
   { date: "2024-10-19", time: "3:30 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 5-0", type: "Men's Soccer" },
   { date: "2024-10-23", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "T 0-0", type: "Men's Soccer" },
-  { date: "2024-10-26", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "", type: "Men's Soccer" },
-  { date: "2024-10-29", time: "7:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Men's Soccer" }
+  { date: "2024-10-26", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "W 3-1", type: "Men's Soccer" },
+  { date: "2024-10-29", time: "7:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "W 3-1", type: "Men's Soccer" }
 ];
 
 const womensSoccerSchedule = [
@@ -63,9 +63,9 @@ const womensSoccerSchedule = [
   { date: "2024-10-12", time: "1:00 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 5-0" },
   { date: "2024-10-16", time: "7:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "L 1-2" },
   { date: "2024-10-19", time: "1:00 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Berea College (Ky.)", result: "W 10-0" },
-  { date: "2024-10-23", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Transylvania University", result: "" },
-  { date: "2024-10-26", time: "1:00 PM", location: "Richmond, IN", opponent: "Earlham College", result: "" },
-  { date: "2024-10-30", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Franklin College", result: "" }
+  { date: "2024-10-23", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Transylvania University", result: "L 2-1" },
+  { date: "2024-10-26", time: "1:00 PM", location: "Richmond, IN", opponent: "Earlham College", result: "W 4-0" },
+  { date: "2024-10-30", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Franklin College", result: "w 3-0" }
 ];
 
 const footballSchedule = [
@@ -271,17 +271,33 @@ map.on('click', (evt) => {
     } else {
       image.style.display = 'none';  // Hide the image if no URL is present
     }
+    
+    const scheduleLinks = {
+      'Soccer Fields': 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024',
+      'Stadium': 'https://athletics.hanover.edu/sports/football/schedule/2024',
+      'Tennis Courts': 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24',
+    };
 
+    let scheduleLink = '';
+    
     if (feature.get('name') === 'Soccer Fields') {
       displayGames(soccerSchedule);  // Load the games
-    }
-    else if (feature.get('name') === 'Stadium') {
+      scheduleLink = scheduleLinks['Soccer Fields'];
+    } else if (feature.get('name') === 'Stadium') {
       displayGames(footballSchedule);  // Load the games
-    }
-    else if (feature.get('name') === 'Tennis Courts'){
+      scheduleLink = scheduleLinks['Stadium'];
+    } else if (feature.get('name') === 'Tennis Courts') {
       displayGames(tennisSchedule);  // Load the games
+      scheduleLink = scheduleLinks['Tennis Courts'];
     }
 
+    // Update the info div with the schedule link
+    if (scheduleLink) {
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${feature.get('name')} Schedule</a></p>`;
+    } else {
+      info.innerHTML += '<p>No schedule available.</p>';
+    }
+    
     // Open the sidebar when a feature is clicked
     openNav(); 
   } else {

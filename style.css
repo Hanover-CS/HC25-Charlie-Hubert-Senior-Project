@@ -47,6 +47,15 @@ html, body {
 #info {
   margin-top: 20px;
 }
+#info a {
+  color: white;      
+  text-decoration: none; 
+}
+
+#info a:hover {
+  text-decoration: underline;
+}
+
 .popup {
   position: absolute;
   background-color: rgb(39, 8, 215);

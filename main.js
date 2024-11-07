@@ -7,6 +7,7 @@ import VectorSource from 'ol/source/Vector.js';
 import Feature from 'ol/Feature.js';
 import Point from 'ol/geom/Point.js';
 import Icon from 'ol/style/Icon.js';
+import {Fill, Stroke, Circle as CircleStyle } from 'ol/style';
 import Style from 'ol/style/Style.js';
 import OSM from 'ol/source/OSM.js';
 import { fromLonLat } from 'ol/proj.js';
@@ -152,7 +153,7 @@ const stadiumFeature = new Feature({
   geometry: new Point(fromLonLat(coords.stadium)), 
   imageUrl: stadiumSidebar,
   info: "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.",
-  name: "Stadium",
+  name: "Alumni Stadium",
 });
 
 // Create a feature for the soccer field
@@ -173,9 +174,14 @@ const tennisFeature = new Feature({
   schedule: 'TBA'
 });
 
+const array = [soccerFeature, stadiumFeature, tennisFeature];
+// for feature of array feature name : feature
+
+const dictionary = Object.fromEntries(array.map(f => [f.get("name"),f]));
+console.log(dictionary);
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
-  features: [soccerFeature, stadiumFeature, tennisFeature], 
+  features: array , 
 });
 
 // Create a vector layer
@@ -195,7 +201,8 @@ const map = new Map({
   view: new View({
     center: fromLonLat(coords.hanoverCollege), // Center on Hanover College
     zoom: 16,
-    minZoom: 16
+    minZoom: 16,
+    
   }),
 });
 
@@ -247,64 +254,120 @@ map.on('pointermove', (evt) => {
 
 // Handle click events to open the sidebar with feature info
 map.on('click', (evt) => {
-  // Get the pixel from the click event
   const pixel = map.getEventPixel(evt.originalEvent);
+  const feature = map.forEachFeatureAtPixel(pixel, (feature) => {if(feature.get('type') == 'red_marker') return false; else return feature});
 
-  // Get the feature at that pixel, if any
-  const feature = map.forEachFeatureAtPixel(pixel, (feature) => feature);
-
-  // Get the sidebar elements where you want to display feature info
   const name = document.getElementById('name');
   const info = document.getElementById('info');
   const image = document.getElementById('feature-image');
   const events = document.getElementById('events');
 
-  if (feature) {
-    // Update the sidebar content with the feature's name
+  // Clear previous content in the sidebar
+  name.innerHTML = '';
+  info.innerHTML = '';
+  image.style.display = 'none'; // Hide image initially
+  events.innerHTML = ''; // Clear events if needed
+  if (feature && feature.get('type') !== 'red_marker') { // Check if feature is not the red marker
+    // Update sidebar with feature details
     name.innerHTML = feature.get('name');
     info.innerHTML = feature.get('info');
-    // Get the feature's image URL and update the image element
+
     const imageUrl = feature.get('imageUrl');
     if (imageUrl) {
       image.src = imageUrl;
-      image.style.display = 'block';  // Show the image
-    } else {
-      image.style.display = 'none';  // Hide the image if no URL is present
+      image.style.display = 'block'; // Show the image
     }
-    
+
     const scheduleLinks = {
       'Soccer Fields': 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024',
-      'Stadium': 'https://athletics.hanover.edu/sports/football/schedule/2024',
+      'Alumni Stadium': 'https://athletics.hanover.edu/sports/football/schedule/2024',
       'Tennis Courts': 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24',
     };
 
-    let scheduleLink = '';
-    
-    if (feature.get('name') === 'Soccer Fields') {
-      displayGames(soccerSchedule);  // Load the games
-      scheduleLink = scheduleLinks['Soccer Fields'];
-    } else if (feature.get('name') === 'Stadium') {
-      displayGames(footballSchedule);  // Load the games
-      scheduleLink = scheduleLinks['Stadium'];
-    } else if (feature.get('name') === 'Tennis Courts') {
-      displayGames(tennisSchedule);  // Load the games
-      scheduleLink = scheduleLinks['Tennis Courts'];
-    }
+    const featureName = feature.get('name');
+    const scheduleLink = scheduleLinks[featureName] || '';
 
-    // Update the info div with the schedule link
     if (scheduleLink) {
-      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${feature.get('name')} Schedule</a></p>`;
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Schedule</a></p>`;
+      // Call displayGames function for the relevant schedule
+      if (featureName === 'Soccer Fields') {
+        displayGames(soccerSchedule);
+      } else if (featureName === 'Alumni Stadium') {
+        displayGames(footballSchedule);
+      } else if (featureName === 'Tennis Courts') {
+        displayGames(tennisSchedule);
+      }
     } else {
       info.innerHTML += '<p>No schedule available.</p>';
     }
-    
-    // Open the sidebar when a feature is clicked
-    openNav(); 
+
+    openNav(); // Open sidebar
   } else {
-    // Close the sidebar if no feature is clicked
-    closeNav();
+    closeNav(); // Close sidebar if no feature or red marker is clicked
   }
 });
+
+// Define the bounding box around Hanover College
+const boundingBox = {
+  southWest: { lat: 38.600, lon: -85.500 },
+  northEast: { lat: 38.800, lon: -85.300 },
+};
+
+// Variable to hold the current red marker feature
+let currentSearchedFeature = null;
+
+// Function to search for a location
+function searchLocation() {
+  const location = document.getElementById('location-input').value;
+
+  // Same bounding box logic as before
+  const bbox = `${boundingBox.southWest.lon},${boundingBox.southWest.lat},${boundingBox.northEast.lon},${boundingBox.northEast.lat}`;
+
+  fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(location)}&format=json&bounded=1&viewbox=${bbox}`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        const { lat, lon } = data[0];
+
+        // Remove the existing red marker if it exists
+        if (currentSearchedFeature) {
+          vectorSource.removeFeature(currentSearchedFeature);
+        }
+
+        // Create a new feature for the searched location
+        currentSearchedFeature = new Feature({
+          geometry: new Point(fromLonLat([lon, lat])),
+          name: location,
+          type: "red_marker"
+        });
+
+        // Style for the red marker
+        currentSearchedFeature.setStyle(new Style({
+          image: new CircleStyle({
+            radius: 10,
+            fill: new Fill({ color: 'red' }),
+            stroke: new Stroke({ color: 'darkred', width: 2 }),
+          }),
+        }));
+
+        // Add the new feature to the vector source
+        vectorSource.addFeature(currentSearchedFeature);
+
+        // Set the view to the new location and zoom in
+        map.getView().setCenter(fromLonLat([lon, lat]));
+        map.getView().setZoom(16);
+
+      } else {
+        alert('Location not found in the specified area');
+      }
+    })
+    .catch(error => console.error('Error fetching location:', error));
+}
+
+// Event listener for the search button
+document.getElementById('search-button').addEventListener('click', searchLocation);
+
+
 
 
 // // GraphHopper API endpoint and key

@@ -178,7 +178,6 @@ const array = [soccerFeature, stadiumFeature, tennisFeature];
 // for feature of array feature name : feature
 
 const dictionary = Object.fromEntries(array.map(f => [f.get("name"),f]));
-console.log(dictionary);
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
   features: array , 
@@ -309,9 +308,45 @@ map.on('click', (evt) => {
 
 // Define the bounding box around Hanover College
 const boundingBox = {
-  southWest: { lat: 38.600, lon: -85.500 },
-  northEast: { lat: 38.800, lon: -85.300 },
+  southWest: { lat: 38.711676, lon: -85.467831 },
+  northEast: { lat: 38.721320, lon: -85.455214 },
 };
+
+// Function to fetch all locations inside the bounding box
+function getAllLocationsInBBox() {
+  const bbox = `${boundingBox.southWest.lon},${boundingBox.southWest.lat},${boundingBox.northEast.lon},${boundingBox.northEast.lat}`;
+  
+  // Initialize an array to store the locations
+  let locationsArray = [];
+  
+  fetch(`https://nominatim.openstreetmap.org/search?format=json&bounded=1&viewbox=${bbox}&addressdetails=1&limit=200`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        // Iterate over the fetched data and store it in the array
+        data.forEach(location => {
+          const locationDetails = {
+            name: location.display_name, // Name of the location (address)
+            lat: location.lat,           // Latitude of the location
+            lon: location.lon,           // Longitude of the location
+          };
+          locationsArray.push(locationDetails);
+        });
+
+        // Output the locations in the console
+        console.log("Locations in the bounding box:", locationsArray);
+      } else {
+        console.log('No locations found in the specified bounding box');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching locations:', error);
+    });
+}
+
+// Call the function to fetch locations
+getAllLocationsInBBox();
+
 
 // Variable to hold the current red marker feature
 let currentSearchedFeature = null;
@@ -355,7 +390,7 @@ function searchLocation() {
 
         // Set the view to the new location and zoom in
         map.getView().setCenter(fromLonLat([lon, lat]));
-        map.getView().setZoom(16);
+        map.getView().setZoom(18);
 
       } else {
         alert('Location not found in the specified area');

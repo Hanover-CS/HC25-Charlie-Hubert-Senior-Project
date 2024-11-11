@@ -18,44 +18,26 @@ import stadiumSidebar from "./assets/images/stadiumSidebar.png";
 import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.png";
 import { soccerSchedule, footballSchedule, tennisSchedule, displayGames } from './schedule.js';
+import { createFeature, setFeatureStyle } from './features';
 
-// Coordinates
+// Coordinates and feature data
 const coords = {
   hanoverCollege: [-85.462007, 38.716167],
   stadium: [-85.464088, 38.718699],
   soccer: [-85.464750, 38.721432],
-  tennis: [-85.465698, 38.717900],
+  tennis: [-85.465698, 38.717900]
 };
 
-const stadiumFeature = new Feature({
-  geometry: new Point(fromLonLat(coords.stadium)), 
-  imageUrl: stadiumSidebar,
-  info: "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.",
-  name: "Alumni Stadium",
-});
+const stadiumFeature = createFeature("Alumni Stadium", coords.stadium, stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
+const soccerFeature = createFeature("Soccer Fields", coords.soccer, soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
+const tennisFeature = createFeature("Tennis Courts", coords.tennis, tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
 
-// Create a feature for the soccer field
-const soccerFeature = new Feature({
-  geometry: new Point(fromLonLat(coords.soccer)), 
-  imageUrl: soccerSidebar,
-  info: "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.",
-  name: "Soccer Fields"
-});
-
-
-// Create a feature for the tennis courts
-const tennisFeature = new Feature({
-  geometry: new Point(fromLonLat(coords.tennis)),
-  imageUrl: tennisSidebar,
-  info: "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.",
-  name: "Tennis Courts",
-  schedule: 'TBA'
-});
 
 const array = [soccerFeature, stadiumFeature, tennisFeature];
 // for feature of array feature name : feature
 
 const dictionary = Object.fromEntries(array.map(f => [f.get("name"),f]));
+
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
   features: array , 
@@ -79,7 +61,6 @@ const map = new Map({
     center: fromLonLat(coords.hanoverCollege), // Center on Hanover College
     zoom: 16,
     minZoom: 16,
-    
   }),
 });
 
@@ -95,10 +76,10 @@ const setIconStyle = (feature, src) => {
   }));
 };
 
-// Set styles for both features initially
-setIconStyle(soccerFeature, soccerField); // Soccer Field image
-setIconStyle(stadiumFeature, stadium); // Stadium image
-setIconStyle(tennisFeature, tennis); // tennis image
+// Apply styles based on zoom level
+setFeatureStyle(stadiumFeature, stadium, map.getView().getZoom());
+setFeatureStyle(soccerFeature, soccerField, map.getView().getZoom());
+setFeatureStyle(tennisFeature, tennis, map.getView().getZoom());
 
 // Update icon styles on zoom change
 map.on('moveend', () => {

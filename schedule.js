@@ -1,7 +1,7 @@
 // schedule.js
 
 // Schedules for various sports
-export const soccerSchedule = [
+  export const soccerSchedule = [
     { date: "2024-08-19", time: "5:00 PM CST", location: "Evansville, IN", opponent: "University of Evansville", result: "", type: "Men's Soccer" },
     { date: "2024-08-20", time: "6:00 PM", location: "Springfield, OH", opponent: "Wittenberg University", result: "", type: "Women's Soccer" },
     { date: "2024-08-20", time: "4:30 PM", location: "Columbus, IN", opponent: "IUPUC", result: "", type: "Men's Soccer" },
@@ -44,16 +44,16 @@ export const soccerSchedule = [
   
   
   export const footballSchedule = [
-    { date: "2024-09-07", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centre College", result: "L 12-27" },
-    { date: "2024-09-14", time: "6:00 PM", location: "Indianapolis, IN", opponent: "Butler University", result: "L 0-53" },
-    { date: "2024-09-21", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "The University of Olivet", result: "W 56-14" },
-    { date: "2024-10-05", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Mount St. Joseph University", result: "L 41-49" },
-    { date: "2024-10-12", time: "2:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Rose-Hulman", result: "W 37-16" },
-    { date: "2024-10-19", time: "1:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "W 35-0" },
-    { date: "2024-10-26", time: "1:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "" },
-    { date: "2024-11-02", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Bluffton University", result: "" },
-    { date: "2024-11-09", time: "1:30 PM", location: "Defiance, OH", opponent: "Defiance College", result: "" },
-    { date: "2024-11-16", time: "1:30 PM", location: "Franklin, IN", opponent: "Franklin College", result: "" }
+    { date: "2024-09-07", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centre College", result: "L 12-27", type: "Football" },
+    { date: "2024-09-14", time: "6:00 PM", location: "Indianapolis, IN", opponent: "Butler University", result: "L 0-53",type: "Football" },
+    { date: "2024-09-21", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "The University of Olivet", result: "W 56-14", type: "Football" },
+    { date: "2024-10-05", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Mount St. Joseph University", result: "L 41-49", type: "Football" },
+    { date: "2024-10-12", time: "2:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Rose-Hulman", result: "W 37-16", type: "Football" },
+    { date: "2024-10-19", time: "1:30 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "W 35-0", type: "Football" },
+    { date: "2024-10-26", time: "1:30 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "", type: "Football" },
+    { date: "2024-11-02", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Bluffton University", result: "", type: "Football" },
+    { date: "2024-11-09", time: "1:30 PM", location: "Defiance, OH", opponent: "Defiance College", result: "", type: "Football" },
+    { date: "2024-11-16", time: "1:30 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Football" }
   ];
 
   export const tennisSchedule = [
@@ -64,7 +64,7 @@ export const soccerSchedule = [
   { date: "2024-10-07", time: "3:00 PM", location: "Hanover, IN (Zeddies Tennis Center)", opponent: "Johnson University - Tennessee", result: "L 2-5", type: "Men's Tennis" },
   { date: "2024-10-12", time: "12:00 PM", location: "North Manchester, IN", opponent: "Manchester University", result: "W 7-0", type: "Men's Tennis" },
   { date: "2024-10-19", time: "12:00 PM", location: "Hanover, IN", opponent: "Berea College (Ky.)", result: "W 7-0", type: "Men's Tennis" }
-];
+  ];
   
   // Function to get recent and upcoming games for a given schedule
   export function getRecentAndUpcomingGames(schedule) {

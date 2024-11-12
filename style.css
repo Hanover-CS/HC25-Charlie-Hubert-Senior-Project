@@ -99,3 +99,32 @@ html, body {
   z-index: 1000;
   color: rgb(255, 255, 255);
 }
+
+/* Position the class schedule box at the bottom-right of the screen */
+#class-schedule {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto; /* Allows scrolling if content exceeds the height */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#class-schedule h3 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.schedule-item {
+  margin-bottom: 15px;
+}
+
+.schedule-item strong {
+  font-size: 14px;
+}

@@ -38,8 +38,6 @@ const tennisFeature = createFeature("Tennis Courts", coords.tennis, tennisSideba
 const array = [soccerFeature, stadiumFeature, tennisFeature];
 // for feature of array feature name : feature
 
-const dictionary = Object.fromEntries(array.map(f => [f.get("name"),f]));
-
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
   features: array , 
@@ -179,7 +177,7 @@ function getAllLocationsInBBox() {
   // Initialize an array to store the locations
   let locationsArray = [];
   
-  fetch(`https://nominatim.openstreetmap.org/search?format=json&bounded=1&viewbox=${bbox}&addressdetails=1&limit=200`)
+  fetch(`https://nominatim.openstreetmap.org/search?format=json&bounded=1&viewbox=${bbox}&addressdetails=1&limit=15`)
     .then(response => response.json())
     .then(data => {
       if (data.length > 0) {

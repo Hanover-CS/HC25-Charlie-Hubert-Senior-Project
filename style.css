@@ -100,72 +100,30 @@ html, body {
   color: rgb(255, 255, 255);
 }
 
-/* Position the class schedule box at the bottom-right of the screen */
+/* Global styles for the map and sidebar */
 #class-schedule {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 250px;
-  max-height: 300px;
-  overflow-y: auto; /* Allows scrolling if content exceeds the height */
-  z-index: 1000; /* Ensure it appears above other elements */
+  bottom: 3vh;    /* Position it at the bottom of the screen using viewport height */
+  right: 3vw;     /* Position it 3% from the right side of the screen */
+  background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+  color: white;    /* Text color */
+  padding: 2vw;    /* Padding relative to the viewport width */
+  border-radius: 1rem;   /* Use rem for rounded corners, relative to root font size */
+  width: 20vw;     /* Width relative to viewport width (20% of the screen width) */
+  max-height: 30vh; /* Max height relative to the viewport height */
+  overflow-y: auto;  /* Add scroll if content exceeds max height */
+  z-index: 1000;    /* Ensure it stays above other elements */
 }
 
+/* Style the class schedule heading */
 #class-schedule h3 {
   margin-top: 0;
-  font-size: 18px;
-  text-align: center;
+  font-size: 2rem;  /* Font size relative to the root element */
+  text-align: center; /* Center the title */
 }
 
+/* Style for individual class schedule items */
 .schedule-item {
-  margin-bottom: 15px;
-}
-
-.schedule-item strong {
-  font-size: 14px;
-}
-
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-  #class-schedule {
-      bottom: 10px;
-      right: 10px;
-      width: 200px; /* Make the schedule box a little smaller on mobile */
-      padding: 15px;
-  }
-
-  #class-schedule h3 {
-      font-size: 16px; /* Adjust font size for smaller screens */
-  }
-
-  .schedule-item {
-      font-size: 12px; /* Smaller text on mobile */
-  }
-
-  .schedule-item strong {
-      font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  #class-schedule {
-      width: 180px; /* Further reduce size on very small screens */
-      padding: 10px;
-  }
-
-  #class-schedule h3 {
-      font-size: 14px; /* Further reduce title font size */
-  }
-
-  .schedule-item {
-      font-size: 11px; /* Even smaller text */
-  }
-
-  .schedule-item strong {
-      font-size: 11px;
-  }
+  margin-bottom: 1vh;  /* Margin relative to viewport height */
+  font-size: 1.2rem;   /* Font size relative to root font size */
 }

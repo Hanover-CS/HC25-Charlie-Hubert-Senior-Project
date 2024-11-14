@@ -11,38 +11,6 @@ html, body {
   width: 100%;
 }
 
-#search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  position: relative;
-  z-index: 10; /* Ensures it's above the map */
-}
-
-/* Styles for the search input and button */
-#location-input {
-  padding: 10px;
-  border: 2px solid #007BFF;
-  border-radius: 20px 0 0 20px; /* Rounded left corners */
-  outline: none;
-  width: 300px;
-}
-
-#search-button {
-  padding: 10px 15px;
-  border: 2px solid #007BFF;
-  border-left: none; /* Remove left border */
-  border-radius: 0 20px 20px 0; /* Rounded right corners */
-  background-color: #007BFF;
-  color: white;
-  cursor: pointer;
-}
-
-#search-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -98,4 +66,66 @@ html, body {
   display: none;
   z-index: 1000;
   color: rgb(255, 255, 255);
+}
+
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+  z-index: 10; /* Ensures it's above the map */
+}
+
+/* Styles for the search input and button */
+#location-input {
+  padding: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 20px 0 0 20px; /* Rounded left corners */
+  outline: none;
+  width: 300px;
+}
+
+#search-button {
+  padding: 10px 15px;
+  border: 2px solid #007BFF;
+  border-left: none; /* Remove left border */
+  border-radius: 0 20px 20px 0; /* Rounded right corners */
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the location dropdown */
+#location-dropdown {
+  position: absolute;
+  top: 100%; /* Positions directly below the search bar */
+  left: 48%; /* Centers the dropdown */
+  transform: translateX(-50%); /* Adjusts for the exact center */
+  width: 300px; /* Same width as the search input */
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 2px solid #007BFF; /* Matches the input and button border */
+  border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+  box-sizing: border-box;
+  z-index: 100;
+  display: none; /* Hidden by default */
+}
+
+/* Style for each dropdown item */
+.dropdown-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px; /* Rounded corners for each item */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Hover effect */
 }

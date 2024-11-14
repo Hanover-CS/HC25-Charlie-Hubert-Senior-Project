@@ -163,41 +163,68 @@ const boundingBox = {
   northEast: { lat: 38.721320, lon: -85.455214 },
 };
 
-// Function to fetch all locations inside the bounding box **NOT WORKING YET**
-function getAllLocationsInBBox() {
-  const bbox = `${boundingBox.southWest.lon},${boundingBox.southWest.lat},${boundingBox.northEast.lon},${boundingBox.northEast.lat}`;
-  
-  // Initialize an array to store the locations
-  let locationsArray = [];
-  
-  fetch(`https://nominatim.openstreetmap.org/search?format=json&bounded=1&viewbox=${bbox}&addressdetails=1&limit=15`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.length > 0) {
-        // Iterate over the fetched data and store it in the array
-        data.forEach(location => {
-          const locationDetails = {
-            name: location.display_name, // Name of the location (address)
-            lat: location.lat,           // Latitude of the location
-            lon: location.lon,           // Longitude of the location
-          };
-          locationsArray.push(locationDetails);
-        });
+const locationsInBBox = [
+  "Culberston Observatory", "The Shoebox", "Alumni Stadium", "Phi Delta Theta", "Coulter House", "Lynn Center for Fine Arts", "Greenwood Suites", "File House",
+  "Lambda Chi Fraternity", "Sigma Chi Fraternity", "Charters of Freedom", "Wiley Hall", "Horner Center", "Duggan Library", "Blythe Hall", "Newby Hall",
+  "Admission", "IT/Academic Computing", "Crowe Hall", "Lynn Hall", "Faculty Office Building", "Science Center", "Science Hall", "Parker Hall", "Classic Hall",
+  "Hendricks Hall", "Presidents Residence", "Brown Chapel", "Brown Campus Center", "The Quad", "Donner Lawn", "Long Adminstration Building",
+  "Donner Hall", "Ide Hall", "The Other Place", "Phi Gamma Delta Fraternity", "Ogle Center", "Campus Safety", "Katharine Parker Hall", "Chi Omega Sorority",
+  "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority"
+]
 
-        // Output the locations in the console
-        console.log("Locations in the bounding box:", locationsArray);
-      } else {
-        console.log('No locations found in the specified bounding box');
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching locations:', error);
+const locationInput = document.getElementById("location-input");
+const locationDropdown = document.getElementById("location-dropdown");
+
+// Function to filter the list of locations based on user input
+function filterLocations(query) {
+    if (!query) {
+        locationDropdown.style.display = "none";
+        return;
+    }
+    const filteredLocations = locationsInBBox.filter(location => {
+        return location.toLowerCase().includes(query.toLowerCase());
     });
+    locationDropdown.innerHTML = ""; // Clear previous dropdown items
+    if (filteredLocations.length > 0) {
+        locationDropdown.style.display = "block"; // Show dropdown
+        filteredLocations.forEach(location => {
+            const item = document.createElement("div");
+            item.classList.add("dropdown-item");
+            item.textContent = location;
+            item.onclick = () => selectLocation(location);
+            locationDropdown.appendChild(item);
+        });
+    } else {
+        locationDropdown.style.display = "none"; // Hide dropdown if no matches
+    }
 }
 
-// Call the function to fetch locations
-getAllLocationsInBBox();
+  // Function to handle the location selection
+  function selectLocation(location) {
+      locationInput.value = location; // Set input value to the selected location
+      locationDropdown.style.display = "none"; // Hide dropdown
+      // You can add additional functionality here, like zooming into the map
+      console.log(`Selected location: ${location}`);
+  }
 
+  // Event listener for input field
+  locationInput.addEventListener("input", (e) => {
+      const query = e.target.value;
+      filterLocations(query);
+  });
+
+  // Event listener for search button
+  document.getElementById('search-button').addEventListener('click', () => {
+      const query = locationInput.value;
+      filterLocations(query); // Apply the same filtering logic when clicking the search button
+  });
+
+  // Close dropdown if user clicks outside of the search container
+  document.addEventListener("click", (e) => {
+      if (!document.getElementById("search-container").contains(e.target)) {
+          locationDropdown.style.display = "none";
+      }
+  });
 
 // Variable to hold the current red marker feature
 let currentSearchedFeature = null;
@@ -250,5 +277,13 @@ function searchLocation() {
     .catch(error => console.error('Error fetching location:', error));
 }
 
+// Function to hide the dropdown
+function hideDropdown() {
+  document.getElementById('location-dropdown').style.display = 'none';
+}
+
 // Event listener for the search button
-document.getElementById('search-button').addEventListener('click', searchLocation);
+document.getElementById('search-button').addEventListener('click', function () {
+  searchLocation();
+  hideDropdown();  // Hide the dropdown when search is clicked
+});

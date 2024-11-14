@@ -29,9 +29,9 @@ const coords = {
   tennis: [-85.465698, 38.717900]
 };
 
-const stadiumFeature = createFeature("Alumni Stadium", coords.stadium, stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
-const soccerFeature = createFeature("Soccer Fields", coords.soccer, soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
-const tennisFeature = createFeature("Tennis Courts", coords.tennis, tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
+const stadiumFeature = createFeature("Alumni Stadium", coords.stadium, 'https://athletics.hanover.edu/sports/football/schedule/2024', stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
+const soccerFeature = createFeature("Soccer Fields", coords.soccer, 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
+const tennisFeature = createFeature("Tennis Courts", coords.tennis, 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
 
 
 const array = [soccerFeature, stadiumFeature, tennisFeature];
@@ -134,14 +134,8 @@ map.on('click', (evt) => {
       image.style.display = 'block'; // Show the image
     }
 
-    const scheduleLinks = {
-      'Soccer Fields': 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024',
-      'Alumni Stadium': 'https://athletics.hanover.edu/sports/football/schedule/2024',
-      'Tennis Courts': 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24',
-    };
-
     const featureName = feature.get('name');
-    const scheduleLink = scheduleLinks[featureName] || '';
+    const scheduleLink = feature.get('scheduleLink') || '';
 
     if (scheduleLink) {
       info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Schedule</a></p>`;
@@ -258,5 +252,3 @@ function searchLocation() {
 
 // Event listener for the search button
 document.getElementById('search-button').addEventListener('click', searchLocation);
-
-displaySchedule(); // Display the class schedule when the page loads

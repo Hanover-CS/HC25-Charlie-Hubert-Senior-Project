@@ -19,7 +19,6 @@ import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.png";
 import { soccerSchedule, footballSchedule, tennisSchedule, displayGames } from './schedule.js';
 import { createFeature, setFeatureStyle } from './features';
-import {displaySchedule} from './classSchedule';
 
 
 // Coordinates and feature data

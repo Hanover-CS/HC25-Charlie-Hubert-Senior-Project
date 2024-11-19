@@ -123,7 +123,7 @@ map.on('click', (evt) => {
   info.innerHTML = '';
   image.style.display = 'none'; // Hide image initially
   events.innerHTML = ''; // Clear events if needed
-  if (feature && feature.get('type') !== 'red_marker') { // Check if feature is not the red marker
+  if (feature) { // Check if feature is not the red marker
     // Update sidebar with feature details
     name.innerHTML = feature.get('name');
     info.innerHTML = feature.get('info');

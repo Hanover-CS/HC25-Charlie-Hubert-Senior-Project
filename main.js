@@ -111,7 +111,7 @@ map.on('pointermove', (evt) => {
 // Handle click events to open the sidebar with feature info
 map.on('click', (evt) => {
   const pixel = map.getEventPixel(evt.originalEvent);
-  const feature = map.forEachFeatureAtPixel(pixel, (feature) => {if(feature.get('type') == 'red_marker') return false; else return feature});
+  const feature = map.forEachFeatureAtPixel(pixel, (feature) => {if(feature.get('type') == 'red_marker' || feature.get('type') == 'current_location_marker' ) return false; else return feature});
 
   const name = document.getElementById('name');
   const info = document.getElementById('info');
@@ -287,3 +287,54 @@ document.getElementById('search-button').addEventListener('click', function () {
   searchLocation();
   hideDropdown();  // Hide the dropdown when search is clicked
 });
+
+// Button to trigger the current location feature
+const currentLocationButton = document.getElementById('current-location-btn');
+
+// Variable to store the current location marker
+let currentLocationFeature = null;
+
+// Function to get the current location and update the map
+function goToCurrentLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+
+      // Remove previous current location feature if it exists
+      if (currentLocationFeature) {
+        vectorSource.removeFeature(currentLocationFeature);
+      }
+
+      // Create a feature for the user's current location
+      currentLocationFeature = new Feature({
+        geometry: new Point(fromLonLat([longitude, latitude])),
+        name: 'Current Location',
+        type: 'current_location_marker',
+      });
+
+      // Style for the current location marker (blue dot)
+      currentLocationFeature.setStyle(new Style({
+        image: new CircleStyle({
+          radius: 10,
+          fill: new Fill({ color: 'blue' }),
+          stroke: new Stroke({ color: 'darkblue', width: 2 }),
+        }),
+      }));
+
+      // Add the current location feature to the vector source
+      vectorSource.addFeature(currentLocationFeature);
+
+      // Center the map on the user's current location and zoom in
+      map.getView().setCenter(fromLonLat([longitude, latitude]));
+      map.getView().setZoom(18); // Adjust zoom level if necessary
+    }, (error) => {
+      // Handle geolocation errors
+      alert('Error getting current location: ' + error.message);
+    });
+  } else {
+    alert('Geolocation is not supported by this browser.');
+  }
+}
+
+// Event listener for the "current location" button
+currentLocationButton.addEventListener('click', goToCurrentLocation);

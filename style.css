@@ -129,3 +129,32 @@ html, body {
 .dropdown-item:hover {
   background-color: #f0f0f0; /* Hover effect */
 }
+
+/* Button Container Style */
+#current-location-btn {
+  position: absolute; /* Position it above the map */
+  top: 20px; /* Distance from the top of the map */
+  right: 20px; /* Distance from the right edge of the map */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for better click area */
+  font-size: 14px; /* Text size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+  z-index: 1000; /* Ensure button is on top of the map */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Button hover and active states */
+#current-location-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift the button slightly */
+}
+
+#current-location-btn:active {
+  background-color: #003f7d; /* Even darker blue when clicked */
+  transform: translateY(0); /* Return to normal position on click */
+}

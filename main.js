@@ -14,32 +14,56 @@ import { fromLonLat } from 'ol/proj.js';
 import stadium from "./assets/images/stadium.png";
 import soccerField from "./assets/images/soccerField.png";
 import tennis from "./assets/images/tennis.png";
+import phidelt from "./assets/images/phidelt.png"
+import dining from "./assets/images/dining.png"
+import residence from "./assets/images/residencehall.png"
+import library from "./assets/images/library.png"
 import stadiumSidebar from "./assets/images/stadiumSidebar.png";
 import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.png";
+import phiDeltaThetaSidebar from "./assets/images/phideltSidebar.jpg";
+import shoeboxSidebar from "./assets/images/shoeboxSidebar.jpg";
+import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
+import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
+import coulterSidebar from "./assets/images/coulterSidebar.jpg";
+import blytheSidebar from "./assets/images/blytheSidebar.jpg";
+
 import { soccerSchedule, footballSchedule, tennisSchedule, displayGames } from './schedule.js';
 import { createFeature, setFeatureStyle } from './features';
+import {coords} from './coords';
+
+// athletic features
+const stadiumFeature = createFeature("Alumni Stadium", "Athletics", coords.stadium, 'https://athletics.hanover.edu/sports/football/schedule/2024', stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
+const soccerFeature = createFeature("Soccer Fields", "Athletics", coords.soccer, 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
+const tennisFeature = createFeature("Tennis Courts", "Athletics", coords.tennis, 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
+
+// dining features
+const shoeboxFeature = createFeature("The Shoebox", "Dining", coords.shoebox, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', shoeboxSidebar, "The Shoebox is a place where you can kick back and relax with friends while enjoying various activities such as- singing karaoke, listening to DJs and bands or watching sports and your favorite TV shows. <br><br>The menu includes items such as: wraps, burgers, wings/tenders, quesadillas, salads, shakes and more! We also offer beer and wine to those who are 21 years of age and over.<br><br>ACADEMIC YEAR HOURS <br>Monday: Closed<br><br>Tuesday - Sunday: 5pm — 10pm<br><br>Meal Exchange Hours: Tuesday - Sunday: 5pm — 10pm<br>(All Plans limited to 1 swipe per Retail Meal Period)");
+
+// greek features
+const phiDeltaThetaFeature = createFeature("Phi Delta Theta", "Greek", coords.PhiDeltaTheta, 'https://hanover.phideltatheta.org/' , phiDeltaThetaSidebar, "Phi Delta Theta is a prominent fraternity at Hanover College, focused on leadership and academic success. The fraternity provides a supportive community for its members.");
+
+// residence features
+const greenwoodSuitesFeature = createFeature("Greenwood Suites", "Residence Hall", coords.greenwood, '', greenwoodSidebar, "HOUSES: 72 STUDENTS <br><br>AVERAGE ROOM SIZE: 14’1″ X 12’4″ <br><br>Students living in the Greenwood Suites are more autonomous with only upper-class students living in the complex. The individual suites in Greenwood house students in a suite of three bedrooms. Two bedrooms share a bath, while the third has its own bathroom. Two lower-level suites have roll-in showers to make them handicap-accessible. Each suite has a small efficiency kitchen with a compact refrigerator and a sink. A range is not allowed; however, the residents may bring in a microwave. All suites are air-conditioned with full laundry facilities available onsite.");
+const coulterFeature = createFeature("Coulter House", "Residence Hall", coords.coulter, '', coulterSidebar, "HOUSES: 38 STUDENTS<br><br>AVERAGE ROOM SIZE: 13′ X 12′<br><br>Built in 2003 and named for botanists John Merle Coulter and Stanley Moses Coulter, great-grandsons of John Finley Crowe, Hanover’s founder.<br><br>Coulter House houses approximately 38 students in a traditional style. Most rooms are doubles, but there are a few single rooms as well as one triple and one quad. There are common bathrooms for each wing, as well as common lounges and laundry facilities." )
+//const croweFeature = createFeature("Crowe Hall", "Residence Hall", coords.coulter, '', coulterSidebar, "HOUSES: 120 STUDENTS<br><br>AVERAGE ROOM SIZE: 13′ X 12′<br><br>Built in 2003 and named for botanists John Merle Coulter and Stanley Moses Coulter, great-grandsons of John Finley Crowe, Hanover’s founder.<br>Coulter House houses approximately 38 students in a traditional style. Most rooms are doubles, but there are a few single rooms as well as one triple and one quad. There are common bathrooms for each wing, as well as common lounges and laundry facilities." )
+//const donnerFeature = createFeature("Donner Hall", "Residence Hall", coords.coulter, '', coulterSidebar, "HOUSES: 38 STUDENTS<br><br>AVERAGE ROOM SIZE: 13′ X 12′<br><br>Built in 2003 and named for botanists John Merle Coulter and Stanley Moses Coulter, great-grandsons of John Finley Crowe, Hanover’s founder.<br>Coulter House houses approximately 38 students in a traditional style. Most rooms are doubles, but there are a few single rooms as well as one triple and one quad. There are common bathrooms for each wing, as well as common lounges and laundry facilities." )
+const blytheFeature = createFeature("Blythe Hall", "Residence Hall", coords.blythe, '', blytheSidebar, "HOUSES: 40 FIRST-YEAR STUDENTS<br><br>AVERAGE ROOM SIZE: 13′ X 13′2″<br><br>Blythe features double rooms. Each floor has a common bathroom. The basement also houses a common lounge, kitchen and laundry facilities." )
 
 
-// Coordinates and feature data
-const coords = {
-  hanoverCollege: [-85.462007, 38.716167],
-  stadium: [-85.464088, 38.718699],
-  soccer: [-85.464750, 38.721432],
-  tennis: [-85.465698, 38.717900]
-};
 
-const stadiumFeature = createFeature("Alumni Stadium", coords.stadium, 'https://athletics.hanover.edu/sports/football/schedule/2024', stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
-const soccerFeature = createFeature("Soccer Fields", coords.soccer, 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
-const tennisFeature = createFeature("Tennis Courts", coords.tennis, 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
+// Academic features
+const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
 
 
-const array = [soccerFeature, stadiumFeature, tennisFeature];
+const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, phiDeltaThetaFeature, shoeboxFeature, greenwoodSuitesFeature, dugganLibraryFeature, coulterFeature,
+  blytheFeature
+];
 // for feature of array feature name : feature
 
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
-  features: array , 
+  features: featuresArray, 
 });
 
 // Create a vector layer
@@ -79,12 +103,25 @@ const setIconStyle = (feature, src) => {
 setFeatureStyle(stadiumFeature, stadium, map.getView().getZoom());
 setFeatureStyle(soccerFeature, soccerField, map.getView().getZoom());
 setFeatureStyle(tennisFeature, tennis, map.getView().getZoom());
+setFeatureStyle(phiDeltaThetaFeature, phidelt, map.getView().getZoom());
+setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
+setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
+setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
+setFeatureStyle(coulterFeature, residence, map.getView().getZoom());
+setFeatureStyle(blytheFeature, residence, map.getView().getZoom());
+
 
 // Update icon styles on zoom change
 map.on('moveend', () => {
   setIconStyle(soccerFeature, soccerField);
   setIconStyle(stadiumFeature, stadium);
   setIconStyle(tennisFeature, tennis);
+  setIconStyle(phiDeltaThetaFeature, phidelt);
+  setIconStyle(shoeboxFeature, dining);
+  setIconStyle(greenwoodSuitesFeature, residence);
+  setIconStyle(dugganLibraryFeature, library);
+  setIconStyle(coulterFeature, residence);
+  setIconStyle(blytheFeature, residence);
 });
 
 
@@ -137,7 +174,7 @@ map.on('click', (evt) => {
     const featureName = feature.get('name');
     const scheduleLink = feature.get('scheduleLink') || '';
 
-    if (scheduleLink) {
+    if (feature.get('type') == 'Athletics') {
       info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Schedule</a></p>`;
       // Call displayGames function for the relevant schedule
       if (featureName === 'Soccer Fields') {
@@ -147,13 +184,20 @@ map.on('click', (evt) => {
       } else if (featureName === 'Tennis Courts') {
         displayGames(tennisSchedule);
       }
-    } else {
-      info.innerHTML += '<p>No schedule available.</p>';
+    } 
+    else if(feature.get('type') == 'Library'){
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Website</a></p>`;
+    }
+    else if(feature.get('type') == 'Dining'){
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Menu</a></p>`;
+    }
+    else {
+      info.innerHTML += '';
     }
 
     openNav(); // Open sidebar
   } else {
-    closeNav(); // Close sidebar if no feature or red marker is clicked
+    closeNav(); // Close sidebar if no feature is clicked
   }
 });
 
@@ -167,7 +211,7 @@ const locationsInBBox = [
   "Culberston Observatory", "The Shoebox", "Alumni Stadium", "Phi Delta Theta", "Coulter House", "Lynn Center for Fine Arts", "Greenwood Suites", "File House",
   "Lambda Chi Fraternity", "Sigma Chi Fraternity", "Charters of Freedom", "Wiley Hall", "Horner Center", "Duggan Library", "Blythe Hall", "Newby Hall",
   "Admission", "IT/Academic Computing", "Crowe Hall", "Lynn Hall", "Faculty Office Building", "Science Center", "Science Hall", "Parker Hall", "Classic Hall",
-  "Hendricks Hall", "Presidents Residence", "Brown Chapel", "Brown Campus Center", "The Quad", "Donner Lawn", "Long Adminstration Building",
+  "Hendricks Hall", "President's Residence", "Brown Chapel", "Brown Campus Center", "The Quad", "Donner Lawn", "Long Adminstration Building",
   "Donner Hall", "Ide Hall", "The Other Place", "Phi Gamma Delta Fraternity", "Ogle Center", "Campus Safety", "Katharine Parker Hall", "Chi Omega Sorority",
   "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority"
 ]
@@ -241,7 +285,7 @@ function searchLocation() {
     .then(data => {
       if (data.length > 0) {
         const { lat, lon } = data[0];
-
+        console.log(lat, lon);
         // Remove the existing red marker if it exists
         if (currentSearchedFeature) {
           vectorSource.removeFeature(currentSearchedFeature);

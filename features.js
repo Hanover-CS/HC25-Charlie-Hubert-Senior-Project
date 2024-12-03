@@ -5,10 +5,11 @@ import Icon from 'ol/style/Icon.js';
 import Style from 'ol/style/Style.js';
 
 // Function to create a feature with a specified name, coordinates, and info
-export const createFeature = (name, coords, scheduleLink, imageUrl, info) => {
+export const createFeature = (name, type, coords, scheduleLink, imageUrl, info) => {
   const feature = new Feature({
     geometry: new Point(fromLonLat(coords)),
     name: name,
+    type: type,
     scheduleLink: scheduleLink,
     imageUrl: imageUrl,
     info: info,

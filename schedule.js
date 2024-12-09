@@ -42,8 +42,87 @@
     { date: "2024-10-30", time: "3:30 PM", location: "Hanover, IN (Soccer Complex)", opponent: "Franklin College", result: "W 3-0", type: "Women's Soccer" }
   ];
   
+  export const softballSchedule = [
+    { date: "2025-02-24", time: "TBD", location: "TBD", opponent: "TBA", result: "", type: "Softball" },
+    { date: "2025-02-25", time: "TBD", location: "TBD", opponent: "TBA", result: "", type: "Softball" },
+    { date: "2025-02-26", time: "TBD", location: "TBD", opponent: "TBA", result: "", type: "Softball" },
+    { date: "2025-03-08", time: "9:00 AM", location: "Greencastle, Ind.", opponent: "Hope College", result: "", type: "Softball" },
+    { date: "2025-03-08", time: "7:00 PM", location: "Greencastle, Ind.", opponent: "DePauw University", result: "", type: "Softball" },
+    { date: "2025-03-09", time: "3:00 PM", location: "Greencastle, Ind. (Kops-Bedel Stadium)", opponent: "Millikin University", result: "", type: "Softball" },
+    { date: "2025-03-09", time: "5:30 PM", location: "Greencastle, Ind.", opponent: "DePauw University", result: "", type: "Softball" },
+    { date: "2025-03-12", time: "4:00 PM", location: "Louisville, Ky.", opponent: "Central College", result: "", type: "Softball" },
+    { date: "2025-03-12", time: "6:30 PM", location: "Louisville, Ky.", opponent: "Central College", result: "", type: "Softball" },
+    { date: "2025-03-15", time: "2:30 PM", location: "Elizabethtown, Ky.", opponent: "Elmhurst University", result: "", type: "Softball" },
+    { date: "2025-03-15", time: "4:45 PM", location: "Elizabethtown, Ky.", opponent: "Carnegie Mellon University", result: "", type: "Softball" },
+    { date: "2025-03-16", time: "10:00 AM", location: "Elizabethtown, Ky.", opponent: "University of Wisconsin-Stout", result: "", type: "Softball" },
+    { date: "2025-03-16", time: "2:30 PM", location: "Elizabethtown, Ky.", opponent: "Adrian College", result: "", type: "Softball" },
+    { date: "2025-03-22", time: "TBD", location: "Wilmington, OH", opponent: "Wilmington College", result: "", type: "Softball" },
+    { date: "2025-03-22", time: "TBD", location: "Wilmington, OH", opponent: "Wilmington College", result: "", type: "Softball" },
+    { date: "2025-03-27", time: "3:00 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Spalding University (Ky.)", result: "", type: "Softball" },
+    { date: "2025-03-27", time: "5:30 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Spalding University (Ky.)", result: "", type: "Softball" },
+    { date: "2025-03-29", time: "1:00 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Bluffton University", result: "", type: "Softball" },
+    { date: "2025-03-29", time: "3:30 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Bluffton University", result: "", type: "Softball" },
+    { date: "2025-04-05", time: "1:00 PM", location: "Richmond, IN", opponent: "Earlham College", result: "", type: "Softball" },
+    { date: "2025-04-05", time: "3:30 PM", location: "Richmond, IN", opponent: "Earlham College", result: "", type: "Softball" },
+    { date: "2025-04-10", time: "5:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "", type: "Softball" },
+    { date: "2025-04-10", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "", type: "Softball" },
+    { date: "2025-04-12", time: "1:00 PM", location: "Berea, KY", opponent: "Berea College (Ky.)", result: "", type: "Softball" },
+    { date: "2025-04-12", time: "3:30 PM", location: "Berea, KY", opponent: "Berea College (Ky.)", result: "", type: "Softball" },
+    { date: "2025-04-19", time: "1:00 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Manchester University", result: "", type: "Softball" },
+    { date: "2025-04-19", time: "3:30 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Manchester University", result: "", type: "Softball" },
+    { date: "2025-04-23", time: "3:00 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Rose-Hulman", result: "", type: "Softball" },
+    { date: "2025-04-23", time: "5:30 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Rose-Hulman", result: "", type: "Softball" },
+    { date: "2025-04-26", time: "1:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "", type: "Softball" },
+    { date: "2025-04-26", time: "3:30 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "", type: "Softball" },
+    { date: "2025-04-30", time: "3:00 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Franklin College", result: "", type: "Softball" },
+    { date: "2025-04-30", time: "5:30 PM", location: "Hanover, IN (Kops-Bedel Stadium)", opponent: "Franklin College", result: "", type: "Softball" },
+    { date: "2025-05-03", time: "1:00 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "", type: "Softball" },
+    { date: "2025-05-03", time: "1:00 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "", type: "Softball" },
+  ];
   
-  export const footballSchedule = [
+  export const baseballSchedule = [
+    { date: "2025-02-21", time: "12:00 PM", location: "Fayetteville, N.C.", opponent: "University of Mary Washington", result: "", type: "Baseball" },
+    { date: "2025-02-22", time: "4:00 PM", location: "Fayetteville, N.C.", opponent: "Methodist University", result: "", type: "Baseball" },
+    { date: "2025-02-23", time: "11:00 AM", location: "Fayetteville, N.C.", opponent: "University of Hartford", result: "", type: "Baseball" },
+    { date: "2025-02-25", time: "6:00 PM", location: "Demorest, GA", opponent: "Piedmont University", result: "", type: "Baseball" },
+    { date: "2025-02-28", time: "TBD", location: "Maryville, TN", opponent: "TBA", result: "", type: "Baseball" },
+    { date: "2025-03-01", time: "TBD", location: "Maryville, TN", opponent: "TBA", result: "", type: "Baseball" },
+    { date: "2025-03-02", time: "TBD", location: "Maryville, TN", opponent: "TBA", result: "", type: "Baseball" },
+    { date: "2025-03-07", time: "TBD", location: "Marietta, Ohio (K.T. Young Ballpark)", opponent: "TBA", result: "", type: "Baseball" },
+    { date: "2025-03-08", time: "TBD", location: "Marietta, Ohio", opponent: "TBA", result: "", type: "Baseball" },
+    { date: "2025-03-15", time: "11:00 AM", location: "Decatur, IL", opponent: "Millikin University", result: "", type: "Baseball" },
+    { date: "2025-03-15", time: "2:00 PM", location: "Decatur, IL", opponent: "Benedictine University", result: "", type: "Baseball" },
+    { date: "2025-03-16", time: "10:00 AM", location: "Decatur, IL", opponent: "Cornell College", result: "", type: "Baseball" },
+    { date: "2025-03-19", time: "6:00 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "", type: "Baseball" },
+    { date: "2025-03-22", time: "12:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Baseball" },
+    { date: "2025-03-22", time: "3:00 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Baseball" },
+    { date: "2025-03-23", time: "1:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Earlham College", result: "", type: "Baseball" },
+    { date: "2025-03-23", time: "4:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Earlham College", result: "", type: "Baseball" },
+    { date: "2025-03-26", time: "4:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Otterbein University", result: "", type: "Baseball" },
+    { date: "2025-03-28", time: "6:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "", type: "Baseball" },
+    { date: "2025-03-28", time: "9:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "", type: "Baseball" },
+    { date: "2025-03-29", time: "1:00 PM", location: "Cincinnati, OH", opponent: "Mount St. Joseph University", result: "", type: "Baseball" },
+    { date: "2025-04-01", time: "4:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Spalding University (Ky.)", result: "", type: "Baseball" },
+    { date: "2025-04-04", time: "7:00 PM", location: "Terre Haute, IN", opponent: "Rose-Hulman", result: "", type: "Baseball" },
+    { date: "2025-04-05", time: "1:00 PM", location: "Terre Haute, IN", opponent: "Rose-Hulman", result: "", type: "Baseball" },
+    { date: "2025-04-05", time: "4:00 PM", location: "Terre Haute, IN", opponent: "Rose-Hulman", result: "", type: "Baseball" },
+    { date: "2025-04-12", time: "12:00 PM", location: "Berea, KY", opponent: "Berea College (Ky.)", result: "", type: "Baseball" },
+    { date: "2025-04-12", time: "3:00 PM", location: "Berea, KY", opponent: "Berea College (Ky.)", result: "", type: "Baseball" },
+    { date: "2025-04-13", time: "1:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Manchester University", result: "", type: "Baseball" },
+    { date: "2025-04-13", time: "4:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Manchester University", result: "", type: "Baseball" },
+    { date: "2025-04-18", time: "8:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "", type: "Baseball" },
+    { date: "2025-04-19", time: "2:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "", type: "Baseball" },
+    { date: "2025-04-19", time: "5:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "", type: "Baseball" },
+    { date: "2025-04-23", time: "5:00 PM", location: "St. Louis, MO", opponent: "Webster University", result: "", type: "Baseball" },
+    { date: "2025-04-26", time: "12:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Bluffton University", result: "", type: "Baseball" },
+    { date: "2025-04-26", time: "3:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Bluffton University", result: "", type: "Baseball" },
+    { date: "2025-04-27", time: "2:00 PM", location: "Westerville, OH", opponent: "Otterbein University", result: "", type: "Baseball" },
+    { date: "2025-05-03", time: "1:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Anderson University (IN)", result: "", type: "Baseball" },
+    { date: "2025-05-03", time: "4:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Anderson University (IN)", result: "", type: "Baseball" },
+    { date: "2025-05-04", time: "12:00 PM", location: "Hanover, IN (K.T. Young Ballpark)", opponent: "Anderson University (IN)", result: "", type: "Baseball" },
+  ];
+  
+    const footballSchedule =[
     { date: "2024-09-07", time: "1:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centre College", result: "L 12-27", type: "Football" },
     { date: "2024-09-14", time: "6:00 PM", location: "Indianapolis, IN", opponent: "Butler University", result: "L 0-53",type: "Football" },
     { date: "2024-09-21", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "The University of Olivet", result: "W 56-14", type: "Football" },
@@ -55,6 +134,56 @@
     { date: "2024-11-09", time: "1:30 PM", location: "Defiance, OH", opponent: "Defiance College", result: "", type: "Football" },
     { date: "2024-11-16", time: "1:30 PM", location: "Franklin, IN", opponent: "Franklin College", result: "", type: "Football" }
   ];
+
+  const mensLacrosseSchedule = [
+    { date: "2024-02-10", time: "1:00 PM", location: "New Concord, OH", opponent: "Muskingum University", result: "L 7-23", type: "Men's Lacrosse" },
+    { date: "2024-02-17", time: "3:30 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Wilmington College", result: "W 23-2", type: "Men's Lacrosse" },
+    { date: "2024-02-24", time: "2:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Concordia University (Wis.)", result: "L 4-23", type: "Men's Lacrosse" },
+    { date: "2024-03-01", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centenary College (Louisiana)", result: "W 10-5", type: "Men's Lacrosse" },
+    { date: "2024-03-06", time: "7:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "L 3-20", type: "Men's Lacrosse" },
+    { date: "2024-03-09", time: "1:00 PM", location: "Tiffin, OH", opponent: "Heidelberg University", result: "W 6-3", type: "Men's Lacrosse" },
+    { date: "2024-03-12", time: "7:00 PM", location: "Danville, KY", opponent: "Centre College", result: "L 2-24", type: "Men's Lacrosse" },
+    { date: "2024-03-16", time: "2:00 PM", location: "Crawfordsville, IN", opponent: "Wabash College", result: "L 8-18", type: "Men's Lacrosse" },
+    { date: "2024-03-20", time: "4:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "DePauw University", result: "L 5-17", type: "Men's Lacrosse" },
+    { date: "2024-03-27", time: "4:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Kalamazoo College", result: "L 5-12", type: "Men's Lacrosse" },
+    { date: "2024-03-29", time: "3:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Trine University", result: "L 3-15", type: "Men's Lacrosse" },
+    { date: "2024-04-03", time: "7:00 PM", location: "Richmond, IN", opponent: "Earlham College", result: "W 13-4", type: "Men's Lacrosse" },
+    { date: "2024-04-13", time: "1:00 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "W 17-5", type: "Men's Lacrosse" },
+    { date: "2024-04-14", time: "2:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Anderson University (IN)", result: "W 15-6", type: "Men's Lacrosse" },
+    { date: "2024-04-20", time: "4:00 PM", location: "TBD (Alumni Stadium)", opponent: "Mount St. Joseph University", result: "W 21-3", type: "Men's Lacrosse" },
+    { date: "2024-04-24", time: "4:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Anderson University (IN)", result: "W 23-7", type: "Men's Lacrosse" },
+    { date: "2024-04-27", time: "4:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "L 4-27", type: "Men's Lacrosse" },
+  ];
+  
+  const womensLacrosseSchedule = [
+    { date: "2024-02-10", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Centre College", result: "L 2-23", type: "Women's Lacrosse" },
+    { date: "2024-02-17", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Bethel University (Ind.)", result: "L 7-17", type: "Women's Lacrosse" },
+    { date: "2024-02-24", time: "11:00 AM", location: "Hanover, IN (Alumni Stadium)", opponent: "Huntingdon College", result: "W 14-4", type: "Women's Lacrosse" },
+    { date: "2024-02-26", time: "6:00 PM", location: "Waynesburg, PA", opponent: "Waynesburg University", result: "W 20-3", type: "Women's Lacrosse" },
+    { date: "2024-02-28", time: "5:00 PM", location: "New Concord, OH", opponent: "Muskingum University", result: "L 10-12", type: "Women's Lacrosse" },
+    { date: "2024-03-02", time: "12:00 PM", location: "Greencastle, IN", opponent: "DePauw University", result: "L 0-23", type: "Women's Lacrosse" },
+    { date: "2024-03-09", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Trine University", result: "L 4-19", type: "Women's Lacrosse" },
+    { date: "2024-03-24", time: "10:00 AM", location: "Hanover, IN (Alumni Stadium)", opponent: "Bethany College", result: "W 12-9", type: "Women's Lacrosse" },
+    { date: "2024-03-27", time: "7:00 PM", location: "Springfield, OH", opponent: "Wittenberg University", result: "L 2-20", type: "Women's Lacrosse" },
+    { date: "2024-03-30", time: "4:00 PM", location: "Adrian, MI", opponent: "Adrian College", result: "Cancelled", type: "Women's Lacrosse" },
+    { date: "2024-04-06", time: "1:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Mount St. Joseph University", result: "W 13-3", type: "Women's Lacrosse" },
+    { date: "2024-04-10", time: "4:00 PM", location: "Louisville, KY", opponent: "Spalding University (Ky.)", result: "L 12-15", type: "Women's Lacrosse" },
+    { date: "2024-04-17", time: "4:00 PM", location: "Hanover, IN (Alumni Stadium)", opponent: "Earlham College", result: "Cancelled", type: "Women's Lacrosse" },
+    { date: "2024-04-20", time: "12:00 PM", location: "Anderson, IN", opponent: "Anderson University (IN)", result: "L 3-15", type: "Women's Lacrosse" },
+    { date: "2024-04-23", time: "4:00 PM", location: "Lexington, KY", opponent: "Transylvania University", result: "L 6-22", type: "Women's Lacrosse" },
+    { date: "2024-04-27", time: "1:00 PM", location: "TBD (Alumni Stadium)", opponent: "Franklin College", result: "W 12-8", type: "Women's Lacrosse" },
+  ];
+  
+  var stadiumSchedule = [...footballSchedule, ...mensLacrosseSchedule, ...womensLacrosseSchedule];
+
+  // Sort the merged schedule by date and time
+  stadiumSchedule.sort((a, b) => {
+    const dateA = new Date(`${a.date} ${a.time}`);
+    const dateB = new Date(`${b.date} ${b.time}`);
+    return dateA - dateB;
+  });
+
+  export var stadiumSchedule;
 
   export const tennisSchedule = [
   { date: "2024-09-07", time: "TBD", location: "Greencastle, IN", opponent: "DePauw University", result: "", type: "Men's Tennis" },
@@ -111,7 +240,7 @@
       eventsDiv.innerHTML += `
         <div class="game">
             <h4>Next Upcoming Game</h4>
-            <p><strong>Type:</strong> ${recentGame.type}<br>
+            <p><strong>Type:</strong> ${nextGame.type}<br>
             <strong>Date:</strong> ${nextGame.date}<br>
             <strong>Time:</strong> ${nextGame.time}<br>
             <strong>Location:</strong> ${nextGame.location}<br>

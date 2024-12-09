@@ -27,6 +27,7 @@ import theta from "./assets/images/theta.jpg";
 import dining from "./assets/images/dining.png"
 import residence from "./assets/images/residencehall.png"
 import library from "./assets/images/library.png"
+import classroom from "./assets/images/classroom.png"
 import stadiumSidebar from "./assets/images/stadiumSidebar.png";
 import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.png";
@@ -38,8 +39,12 @@ import adpiSidebar from "./assets/images/adpiSidebar.jpg";
 import phimuSidebar from "./assets/images/phimuSidebar.png";
 import thetaSidebar from "./assets/images/thetaSidebar.jpg";
 import shoeboxSidebar from "./assets/images/shoeboxSidebar.jpg";
+import ugSidebar from "./assets/images/ugSidebar.jpg";
+import pointSidebar from "./assets/images/pointSidebar.jpg";
+import thepoint from "./assets/images/thepoint.png";
 import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
 import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
+import scienceCenterSidebar from "./assets/images/scienceCenterSidebar.jpg";
 import coulterSidebar from "./assets/images/coulterSidebar.jpg";
 import blytheSidebar from "./assets/images/blytheSidebar.jpg";
 import donnerSidebar from "./assets/images/donnerSidebar.jpg";
@@ -49,27 +54,32 @@ import ideSidebar from "./assets/images/ideSidebar.jpg";
 import kpSidebar from "./assets/images/kpSidebar.jpg";
 import baseballSidebar from "./assets/images/baseballSidebar.jpg";
 import softballSidebar from "./assets/images/softballSidebar.jpg";
-import { soccerSchedule, footballSchedule, tennisSchedule, displayGames } from './schedule.js';
+import { soccerSchedule, stadiumSchedule, tennisSchedule, baseballSchedule, softballSchedule, displayGames } from './schedule.js';
 import { createFeature, setFeatureStyle } from './features';
 import {coords} from './coords';
 
 // athletic features
-const stadiumFeature = createFeature("Alumni Stadium", "Athletics", coords.stadium, 'https://athletics.hanover.edu/sports/football/schedule/2024', stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
-const soccerFeature = createFeature("Soccer Fields", "Athletics", coords.soccer, 'https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
-const tennisFeature = createFeature("Zeddies Tennis Center", "Athletics", coords.tennis, 'https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
+const soccerLinks = ['https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', 'https://athletics.hanover.edu/sports/womens-soccer/schedule']
+const tennisLinks = ['https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', "https://athletics.hanover.edu/sports/womens-tennis/schedule/2024-25"]
+const stadiumLinks = ['https://athletics.hanover.edu/sports/football/schedule/2024', "https://athletics.hanover.edu/sports/mens-lacrosse/schedule/2024", "https://athletics.hanover.edu/sports/womens-lacrosse/schedule"]
+
+const stadiumFeature = createFeature("Alumni Stadium", "Athletics", coords.stadium, stadiumLinks, stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
+const soccerFeature = createFeature("Soccer Fields", "Athletics", coords.soccer, soccerLinks, soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
+const tennisFeature = createFeature("Zeddies Tennis Center", "Athletics", coords.tennis, tennisLinks, tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
 const baseballFeature = createFeature("K.T. Young Ballpark", "Athletics", coords.baseball, 'https://athletics.hanover.edu/sports/baseball/schedule/2024', baseballSidebar,"Scenic K.T. Young Ballpark, home to the Panthers since 1972, is one of the nicest in the Midwest. The field saw recent improvements in 2014 when professional style dugouts and bullpens were added along with a press box, a new scoreboard, and two 70-foot batting cages down the left field line. It features a crushed red brick and natural turf infield and an outfield fence lined with more than 100 trees. The field also has a sprinkler system throughout the field.<br><br>The park is named after Kenneth T. Young '65 and in memory of Thomas D. Young '39 for their participation in and support of athletic programs at Hanover College.<br><br>The field is named Dick Naylor Field in honor of former head baseball coach Dick Naylor for his outstanding service to Hanover College and his accomplishments as head baseball coach for 36 years.<br><br>The Gaunt Grandstands and Press Box are named in honor of Jim '67 and Kate Gaunt for their special interest in the students of Hanover College and for their generous financial support to the athletic facilities project of the Live Our Loyalty Campaign. " )
 const softballFeature = createFeature("Kops-Bedel Stadium", "Athletics", coords.softball, 'https://athletics.hanover.edu/sports/softball', softballSidebar, "Hanover's softball team plays on one of the Midwest's finest fields. Kops-Bedel Stadium features a crushed red-brick infield and an agrilime warning track in the outfield along with professional style dugouts, bullpens for each side, batting cages, and a press box.<br><br>The stadium is named in honor of Elaine E. Kops-Bedel '74 and Eric J. Bedel in recognition of her special interest in the women students of Hanover College, her leadership in securing financial support for athletic facilities, and their generous contributions to the Live Our Loyalty Campaign.<br><br>The field is named Brouillette Field for Donald G. & Marilyn Brouillette by their daughter, JoAnn Brouillette '83 in honor of their inspiration and impact on family, community, Hanover College, and women's sports.<br><br>The Rector-Gleason Grandstands and Press Box are named in honor of Greg '72 and Kristine Rector Gleason '73 in recognition of their support of the Live Our Loyalty Campaign of Hanover College.");
 //const basketballFeature = 
 
 // dining features
 const shoeboxFeature = createFeature("The Shoebox", "Dining", coords.shoebox, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', shoeboxSidebar, "The Shoebox is a place where you can kick back and relax with friends while enjoying various activities such as- singing karaoke, listening to DJs and bands or watching sports and your favorite TV shows. <br><br>The menu includes items such as: wraps, burgers, wings/tenders, quesadillas, salads, shakes and more! We also offer beer and wine to those who are 21 years of age and over.<br><br>ACADEMIC YEAR HOURS <br>Monday: Closed<br><br>Tuesday - Sunday: 5pm — 10pm<br><br>Meal Exchange Hours: Tuesday - Sunday: 5pm — 10pm<br>(All Plans limited to 1 swipe per Retail Meal Period)");
+const ugFeature = createFeature("The Underground", "Dining", coords.ug, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', ugSidebar, "The Underground is a grill and burrito style fast food place on campus with options varying from fried chicken sandwiches to quesadillas. It has a dark atmosphere with plenty of tables many of which have chargers making this a perfect place for a late night study snack, or when you are in a hurry and need something quick. It also has Cafe 1827 which is a starbucks.<br><br>ACADEMIC YEAR HOURS<br><br>Monday - Sunday: 11am — 11 pm<br><br>Meal Exhange Hours: Monday - Sunday 11am - 11pm" )
 
 // greek features
 const phiDeltaThetaFeature = createFeature("Phi Delta Theta", "Greek", coords.PhiDeltaTheta, 'https://hanover.phideltatheta.org/', phiDeltaThetaSidebar, "Phi Delta Theta (ΦΔΘ) is a fraternity founded in 1848 with a commitment to the principles of friendship, sound learning, and moral rectitude. The fraternity focuses on fostering personal growth, leadership, academic achievement, and brotherhood among its members. Phi Delta Theta aims to develop men of strong character who contribute positively to their communities and uphold high standards of integrity. The fraternity is known for its dedication to creating lasting relationships and providing a supportive environment for members' success both during college and beyond.<br><br>Phi Delta Theta is a prominent fraternity at Hanover College, focused on leadership and academic success. The fraternity provides a supportive community for its members.");
 const sigmaChiFeature = createFeature("Sigma Chi Fraternity", "Greek", coords.SigmaChi, '', sigmachiSidebar,"Sigma Chi Alpha is a local fraternity that focuses on building strong bonds of brotherhood, leadership, and personal development. It emphasizes academic achievement, community service, and fostering a supportive environment for its members. The fraternity strives to cultivate values of integrity, respect, and responsibility, while encouraging members to lead by example and contribute positively to society.")
 const lambdaChiAlphaFeature = createFeature("Lambda Chi Fraternity", "Greek", coords.Lambda, '', sigmachiSidebar, "Lambda Chi Alpha is a fraternity founded in 1909 that values friendship, leadership, scholarship, and service. It aims to create lifelong bonds of brotherhood and foster personal growth through community involvement and philanthropy. The fraternity emphasizes inclusivity, personal development, and the importance of making a positive impact on both campus and society.")
 const fijiFeature = createFeature("Phi Gamma Delta Fraternity", "Greek", coords.Fiji, '', fijiSidebar, "Fiji, or Phi Gamma Delta, is a fraternity founded in 1848 with a strong focus on friendship, knowledge, service, morality, and excellence. Its core values emphasize leadership, academic success, and the development of lifelong relationships among members. The fraternity encourages a commitment to community involvement, personal growth, and high ethical standards, aiming to create a positive impact both on campus and in the broader world.")
-const chiOmegaFeature = createFeature("Chi Omega Sorority", "Greek", coords.chiO, '',chioSidebar, "Chi Omega (ΧΩ) is a women's sorority founded in 1895 at the University of Arkansas. It is one of the largest sororities in the United States, known for its commitment to fostering friendship, personal growth, and academic excellence. Chi Omega emphasizes the importance of leadership, service, and philanthropy, and its members are encouraged to engage in community service and support charitable causes. The sorority's values are based on strong sisterhood, ethical conduct, and a lifelong commitment to personal and professional development. Chi Omega is also recognized for its dedication to supporting women and helping them achieve their full potential.")
+const chiOmegaFeature = createFeature("Chi Omega Sorority", "Greek", coords.chiO, '', chioSidebar, "Chi Omega (ΧΩ) is a women's sorority founded in 1895 at the University of Arkansas. It is one of the largest sororities in the United States, known for its commitment to fostering friendship, personal growth, and academic excellence. Chi Omega emphasizes the importance of leadership, service, and philanthropy, and its members are encouraged to engage in community service and support charitable causes. The sorority's values are based on strong sisterhood, ethical conduct, and a lifelong commitment to personal and professional development. Chi Omega is also recognized for its dedication to supporting women and helping them achieve their full potential.")
 const adpiFeature = createFeature("Alpha Delta Pi Sorority", "Greek", coords.adpi, '', adpiSidebar, "Alpha Delta Pi (ADPi) is a sorority founded in 1851 at Wesleyan College in Macon, Georgia. It was the first secret society for women, and its core values focus on sisterhood, leadership, academic excellence, and service. ADPi is committed to fostering lifelong friendships and personal growth among its members while promoting philanthropy, particularly through its support of the Ronald McDonald House Charities. With a strong emphasis on scholarship, leadership, and community involvement, Alpha Delta Pi strives to empower women to lead with integrity and make a positive impact in their communities." )
 const phimuFeature = createFeature("Phi Mu Sorority", "Greek", coords.phimu, '', phimuSidebar, "Phi Mu is a sorority founded in 1852 at Wesleyan College in Macon, Georgia. It is one of the oldest sororities in the United States and is dedicated to promoting values of sisterhood, service, scholarship, and love. Phi Mu’s philanthropic focus is on supporting the Children’s Miracle Network Hospitals, and its members are encouraged to make a positive impact on their communities. With a rich tradition of empowering women, Phi Mu fosters personal growth, leadership, and lifelong friendships among its members. The sorority’s motto, 'Les Soeurs Fidèles' (The Faithful Sisters), reflects its commitment to enduring bonds and support.")
 const thetaFeature = createFeature("Kappa Alpha Theta Sorority", "Greek", coords.theta, '', thetaSidebar, "Kappa Alpha Theta is a sorority founded in 1870 at DePauw University in Greencastle, Indiana. It was the first Greek-letter fraternity for women and has a rich history of fostering academic excellence, leadership, and personal growth. Kappa Alpha Theta focuses on empowering women to become strong leaders and active members of their communities. Its national philanthropy is CASA (Court Appointed Special Advocates), an organization dedicated to advocating for children in the foster care system. The sorority’s motto, 'Leading Women,' reflects its commitment to developing confident, compassionate women who make a difference in the world.")
@@ -86,11 +96,15 @@ const kpFeature = createFeature("Katherine Parker Hall", "Residence Hall", coord
 
 // Academic features
 const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
+const scienceCenterFeature = createFeature("Science Center", "Classroom", coords.scienceCenter, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.")
+
+// Misc Features
+const pointFeature = createFeature("The Point", "Misc", coords.point, '', pointSidebar, "The Point at Hanover College is a breathtaking location that epitomizes the natural beauty and serene charm of the campus. Nestled on the bluffs overlooking the confluence of the Ohio River and rolling hills of Kentucky, The Point offers sweeping panoramic views that captivate students, visitors, and alumni alike. It's more than just a scenic spot; it's a place of inspiration, reflection, and connection. Whether you're watching a golden sunset, enjoying a quiet moment of study, or celebrating life’s milestones, The Point stands as a timeless symbol of Hanover's commitment to harmony between education and nature." )
 
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
-  sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
-  coulterFeature,
+  sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
+  coulterFeature, scienceCenterFeature, pointFeature,
   blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature
 ];
 // for feature of array feature name : feature
@@ -149,10 +163,13 @@ setFeatureStyle(adpiFeature, adpi, map.getView().getZoom());
 setFeatureStyle(phimuFeature, phimu, map.getView().getZoom());
 setFeatureStyle(thetaFeature, theta, map.getView().getZoom());
 
+setFeatureStyle(pointFeature, thepoint, map.getView().getZoom());
 
 setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
+setFeatureStyle(ugFeature, dining, map.getView().getZoom());
 
 setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
+setFeatureStyle(scienceCenterFeature, classroom, map.getView().getZoom());
 
 setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
 setFeatureStyle(coulterFeature, residence, map.getView().getZoom());
@@ -162,7 +179,6 @@ setFeatureStyle(croweFeature, residence, map.getView().getZoom());
 setFeatureStyle(wileyFeature, residence, map.getView().getZoom());
 setFeatureStyle(ideFeature, residence, map.getView().getZoom());
 setFeatureStyle(kpFeature, residence, map.getView().getZoom());
-
 
 
 // Update icon styles on zoom change
@@ -182,9 +198,14 @@ map.on('moveend', () => {
   setIconStyle(phimuFeature, phimu);
   setIconStyle(thetaFeature, theta);
 
+  setIconStyle(pointFeature, thepoint);
+
   setIconStyle(shoeboxFeature, dining);
+  setIconStyle(ugFeature, dining);
 
   setIconStyle(dugganLibraryFeature, library);
+  setIconStyle(scienceCenterFeature, classroom);
+
 
   setIconStyle(greenwoodSuitesFeature, residence);
   setIconStyle(coulterFeature, residence);
@@ -247,14 +268,26 @@ map.on('click', (evt) => {
     const scheduleLink = feature.get('scheduleLink') || '';
 
     if (feature.get('type') == 'Athletics') {
-      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Schedule</a></p>`;
       // Call displayGames function for the relevant schedule
       if (featureName === 'Soccer Fields') {
         displayGames(soccerSchedule);
+        info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Mens Soccer Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Womens Soccer Schedule</a></p>`;
       } else if (featureName === 'Alumni Stadium') {
-        displayGames(footballSchedule);
+        displayGames(stadiumSchedule);
+        info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Football Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Mens Lacrosse Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[2]}" target="_blank">View Womens Lacrosse Schedule</a></p>`;
       } else if (featureName === "Zeddies Tennis Center") {
         displayGames(tennisSchedule);
+        info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Mens Tennis Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Womens Tennis Schedule</a></p>`;
+      } else if (featureName === "K.T. Young Ballpark") {
+      displayGames(baseballSchedule);
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View Baseball Schedule</a></p>`;
+      } else if (featureName === "Kops-Bedel Stadium") {
+      displayGames(softballSchedule);
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View Softball Schedule</a></p>`;
       }
     } 
     else if(feature.get('type') == 'Library'){
@@ -267,7 +300,6 @@ map.on('click', (evt) => {
     else {
       info.innerHTML += '';
     }
-
     openNav(); // Open sidebar
   } else {
     closeNav(); // Close sidebar if no feature is clicked
@@ -287,7 +319,7 @@ const locationsInBBox = [
   "Admission", "IT/Academic Computing", "Crowe Hall", "Lynn Hall", "Faculty Office Building", "Science Center", "Science Hall", "Parker Hall", "Classic Hall",
   "Hendricks Hall", "President's Residence", "Brown Chapel", "Brown Campus Center", "The Quad", "Donner Lawn", "Long Adminstration Building",
   "Donner Hall", "Ide Hall", "The Other Place", "Phi Gamma Delta Fraternity", "Ogle Center", "Campus Safety", "Katharine Parker Hall", "Chi Omega Sorority",
-  "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority"
+  "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority", "The Underground", "The Point"
 ]
 
 const locationInput = document.getElementById("location-input");

@@ -20,6 +20,10 @@ import phidelt from "./assets/images/phidelt.png"
 import lambda from "./assets/images/lambda.png"
 import sigma from "./assets/images/sigma.png";
 import fiji from "./assets/images/fiji.png";
+import chio from "./assets/images/chio.png";
+import adpi from "./assets/images/adpi.png";
+import phimu from "./assets/images/phimu.png";
+import theta from "./assets/images/theta.jpg";
 import dining from "./assets/images/dining.png"
 import residence from "./assets/images/residencehall.png"
 import library from "./assets/images/library.png"
@@ -28,7 +32,11 @@ import soccerSidebar from "./assets/images/soccerSidebar.png";
 import tennisSidebar from "./assets/images/tennisSidebar.png";
 import phiDeltaThetaSidebar from "./assets/images/phideltSidebar.jpg";
 import sigmachiSidebar from "./assets/images/sigmachiSidebar.jpg";
-import fijiSidebar from "./assets/images/fijiSidebar.jpg";
+import fijiSidebar from "./assets/images/fijiSidebar.jpg"
+import chioSidebar from "./assets/images/chioSidebar.jpg";
+import adpiSidebar from "./assets/images/adpiSidebar.jpg";
+import phimuSidebar from "./assets/images/phimuSidebar.png";
+import thetaSidebar from "./assets/images/thetaSidebar.jpg";
 import shoeboxSidebar from "./assets/images/shoeboxSidebar.jpg";
 import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
 import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
@@ -59,8 +67,12 @@ const shoeboxFeature = createFeature("The Shoebox", "Dining", coords.shoebox, 'h
 // greek features
 const phiDeltaThetaFeature = createFeature("Phi Delta Theta", "Greek", coords.PhiDeltaTheta, 'https://hanover.phideltatheta.org/', phiDeltaThetaSidebar, "Phi Delta Theta (ΦΔΘ) is a fraternity founded in 1848 with a commitment to the principles of friendship, sound learning, and moral rectitude. The fraternity focuses on fostering personal growth, leadership, academic achievement, and brotherhood among its members. Phi Delta Theta aims to develop men of strong character who contribute positively to their communities and uphold high standards of integrity. The fraternity is known for its dedication to creating lasting relationships and providing a supportive environment for members' success both during college and beyond.<br><br>Phi Delta Theta is a prominent fraternity at Hanover College, focused on leadership and academic success. The fraternity provides a supportive community for its members.");
 const sigmaChiFeature = createFeature("Sigma Chi Fraternity", "Greek", coords.SigmaChi, '', sigmachiSidebar,"Sigma Chi Alpha is a local fraternity that focuses on building strong bonds of brotherhood, leadership, and personal development. It emphasizes academic achievement, community service, and fostering a supportive environment for its members. The fraternity strives to cultivate values of integrity, respect, and responsibility, while encouraging members to lead by example and contribute positively to society.")
-const lambdaChiAlphaFeature = createFeature("Lambda Chi Fraternity", "Greek", coords.Lambda, '', lambda, "Lambda Chi Alpha is a fraternity founded in 1909 that values friendship, leadership, scholarship, and service. It aims to create lifelong bonds of brotherhood and foster personal growth through community involvement and philanthropy. The fraternity emphasizes inclusivity, personal development, and the importance of making a positive impact on both campus and society.")
+const lambdaChiAlphaFeature = createFeature("Lambda Chi Fraternity", "Greek", coords.Lambda, '', sigmachiSidebar, "Lambda Chi Alpha is a fraternity founded in 1909 that values friendship, leadership, scholarship, and service. It aims to create lifelong bonds of brotherhood and foster personal growth through community involvement and philanthropy. The fraternity emphasizes inclusivity, personal development, and the importance of making a positive impact on both campus and society.")
 const fijiFeature = createFeature("Phi Gamma Delta Fraternity", "Greek", coords.Fiji, '', fijiSidebar, "Fiji, or Phi Gamma Delta, is a fraternity founded in 1848 with a strong focus on friendship, knowledge, service, morality, and excellence. Its core values emphasize leadership, academic success, and the development of lifelong relationships among members. The fraternity encourages a commitment to community involvement, personal growth, and high ethical standards, aiming to create a positive impact both on campus and in the broader world.")
+const chiOmegaFeature = createFeature("Chi Omega Sorority", "Greek", coords.chiO, '',chioSidebar, "Chi Omega (ΧΩ) is a women's sorority founded in 1895 at the University of Arkansas. It is one of the largest sororities in the United States, known for its commitment to fostering friendship, personal growth, and academic excellence. Chi Omega emphasizes the importance of leadership, service, and philanthropy, and its members are encouraged to engage in community service and support charitable causes. The sorority's values are based on strong sisterhood, ethical conduct, and a lifelong commitment to personal and professional development. Chi Omega is also recognized for its dedication to supporting women and helping them achieve their full potential.")
+const adpiFeature = createFeature("Alpha Delta Pi Sorority", "Greek", coords.adpi, '', adpiSidebar, "Alpha Delta Pi (ADPi) is a sorority founded in 1851 at Wesleyan College in Macon, Georgia. It was the first secret society for women, and its core values focus on sisterhood, leadership, academic excellence, and service. ADPi is committed to fostering lifelong friendships and personal growth among its members while promoting philanthropy, particularly through its support of the Ronald McDonald House Charities. With a strong emphasis on scholarship, leadership, and community involvement, Alpha Delta Pi strives to empower women to lead with integrity and make a positive impact in their communities." )
+const phimuFeature = createFeature("Phi Mu Sorority", "Greek", coords.phimu, '', phimuSidebar, "Phi Mu is a sorority founded in 1852 at Wesleyan College in Macon, Georgia. It is one of the oldest sororities in the United States and is dedicated to promoting values of sisterhood, service, scholarship, and love. Phi Mu’s philanthropic focus is on supporting the Children’s Miracle Network Hospitals, and its members are encouraged to make a positive impact on their communities. With a rich tradition of empowering women, Phi Mu fosters personal growth, leadership, and lifelong friendships among its members. The sorority’s motto, 'Les Soeurs Fidèles' (The Faithful Sisters), reflects its commitment to enduring bonds and support.")
+const thetaFeature = createFeature("Kappa Alpha Theta Sorority", "Greek", coords.theta, '', thetaSidebar, "Kappa Alpha Theta is a sorority founded in 1870 at DePauw University in Greencastle, Indiana. It was the first Greek-letter fraternity for women and has a rich history of fostering academic excellence, leadership, and personal growth. Kappa Alpha Theta focuses on empowering women to become strong leaders and active members of their communities. Its national philanthropy is CASA (Court Appointed Special Advocates), an organization dedicated to advocating for children in the foster care system. The sorority’s motto, 'Leading Women,' reflects its commitment to developing confident, compassionate women who make a difference in the world.")
 
 // residence features
 const greenwoodSuitesFeature = createFeature("Greenwood Suites", "Residence Hall", coords.greenwood, '', greenwoodSidebar, "HOUSES: 72 STUDENTS <br><br>AVERAGE ROOM SIZE: 14’1″ X 12’4″ <br><br>Students living in the Greenwood Suites are more autonomous with only upper-class students living in the complex. The individual suites in Greenwood house students in a suite of three bedrooms. Two bedrooms share a bath, while the third has its own bathroom. Two lower-level suites have roll-in showers to make them handicap-accessible. Each suite has a small efficiency kitchen with a compact refrigerator and a sink. A range is not allowed; however, the residents may bring in a microwave. All suites are air-conditioned with full laundry facilities available onsite.");
@@ -71,12 +83,14 @@ const blytheFeature = createFeature("Blythe Hall", "Residence Hall", coords.blyt
 const wileyFeature = createFeature("Wiley Hall", "Residence Hall", coords.wiley, '', wileySidebar, "HOUSES: 90 STUDENTS<br><br>AVERAGE ROOM SIZE: 14’1″ X 12’4″<br><br>Wiley Hall is a traditional upper-class residence hall, accommodating 90 students in mostly single rooms. There are common bathrooms for each wing, common lounges and laundry facilities." );
 const ideFeature = createFeature("Ide Hall", "Residence Hall", coords.ide, '', ideSidebar, "HOUSES: 40 FIRST-YEAR STUDENTS<br><br>AVERAGE ROOM SIZE: 13’1″ X 13’3″<br><br>Ide Hall is a first-year residence hall with double rooms and is co-ed by floor. There are common bathrooms for each wing, common lounges and laundry facilities.<br><br>Ide just underwent a renovation in 2020 and is practically new from top to bottom, including air-conditioning in all rooms.");
 const kpFeature = createFeature("Katherine Parker Hall", "Residence Hall", coords.kp, '', kpSidebar, "HOUSES: 90 FIRST-YEAR STUDENTS<br><br>AVERAGE ROOM SIZE: 13’11” X 10’8″<br><br>Katharine Parker Hall is for first-year students, accommodating 90 students with men and women living on separate floors.<br><br>There are common bathrooms for each wing, a common lounge and laundry facilities.");
+
 // Academic features
 const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
 
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
-  sigmaChiFeature, fijiFeature, shoeboxFeature, greenwoodSuitesFeature, dugganLibraryFeature, coulterFeature,
+  sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
+  coulterFeature,
   blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature
 ];
 // for feature of array feature name : feature
@@ -125,13 +139,22 @@ setFeatureStyle(soccerFeature, soccerField, map.getView().getZoom());
 setFeatureStyle(tennisFeature, tennis, map.getView().getZoom());
 setFeatureStyle(baseballFeature, baseball, map.getView().getZoom());
 setFeatureStyle(softballFeature, softball, map.getView().getZoom());
+
 setFeatureStyle(phiDeltaThetaFeature, phidelt, map.getView().getZoom());
 setFeatureStyle(lambdaChiAlphaFeature, lambda, map.getView().getZoom());
 setFeatureStyle(sigmaChiFeature, sigma, map.getView().getZoom());
 setFeatureStyle(fijiFeature, fiji, map.getView().getZoom());
+setFeatureStyle(chiOmegaFeature, chio, map.getView().getZoom());
+setFeatureStyle(adpiFeature, adpi, map.getView().getZoom());
+setFeatureStyle(phimuFeature, phimu, map.getView().getZoom());
+setFeatureStyle(thetaFeature, theta, map.getView().getZoom());
+
+
 setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
-setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
+
 setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
+
+setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
 setFeatureStyle(coulterFeature, residence, map.getView().getZoom());
 setFeatureStyle(blytheFeature, residence, map.getView().getZoom());
 setFeatureStyle(donnerFeature, residence, map.getView().getZoom());
@@ -149,13 +172,21 @@ map.on('moveend', () => {
   setIconStyle(tennisFeature, tennis);
   setIconStyle(baseballFeature, baseball);
   setIconStyle(softballFeature, softball);
+
   setIconStyle(phiDeltaThetaFeature, phidelt);
   setIconStyle(lambdaChiAlphaFeature, lambda);  
   setIconStyle(sigmaChiFeature, sigma);
   setIconStyle(fijiFeature, fiji);
+  setIconStyle(chiOmegaFeature, chio);
+  setIconStyle(adpiFeature, adpi);
+  setIconStyle(phimuFeature, phimu);
+  setIconStyle(thetaFeature, theta);
+
   setIconStyle(shoeboxFeature, dining);
-  setIconStyle(greenwoodSuitesFeature, residence);
+
   setIconStyle(dugganLibraryFeature, library);
+
+  setIconStyle(greenwoodSuitesFeature, residence);
   setIconStyle(coulterFeature, residence);
   setIconStyle(blytheFeature, residence);
   setIconStyle(donnerFeature, residence);

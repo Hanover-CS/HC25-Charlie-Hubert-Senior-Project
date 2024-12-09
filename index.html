@@ -23,6 +23,15 @@
         <div id="events">&nbsp;</div> </div>
     </div>
 
+    <!-- Route planner -->
+    <div id="route-planner">
+        <label for="startLocation">Start:</label>
+        <input type="text" id="startLocation" placeholder="Enter start location">
+        <label for="endLocation">End:</label>
+        <input type="text" id="endLocation" placeholder="Enter end location">
+        <button id="calculate-route-btn">Calculate Route</button>
+    </div>
+
     <button id="current-location-btn">Go to Current Location</button>
 
     <!-- Map container -->
@@ -43,6 +52,18 @@
         function closeNav() {
             document.getElementById("sidebar").classList.remove('show');
         }
+
+        // Function to handle route calculation
+        function calculateRoute() {
+            const start = document.getElementById("startLocation").value;
+            const end = document.getElementById("endLocation").value;
+
+            // Add route calculation logic here (using OpenLayers or a routing API)
+            alert(`Calculating route from ${start} to ${end}`);
+        }
+
+        document.getElementById("calculate-route-btn").addEventListener("click", calculateRoute);
+    
     </script>
 
 </body>

@@ -158,3 +158,41 @@ html, body {
   background-color: #003f7d; /* Even darker blue when clicked */
   transform: translateY(0); /* Return to normal position on click */
 }
+
+
+ /* Route planner container */
+ #route-planner {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#route-planner label,
+#route-planner input,
+#route-planner button {
+  margin-bottom: 5px;
+  display: block;
+}
+
+#route-planner input {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#route-planner button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#route-planner button:hover {
+  background-color: #0056b3;
+}

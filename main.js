@@ -54,21 +54,27 @@ import ideSidebar from "./assets/images/ideSidebar.jpg";
 import kpSidebar from "./assets/images/kpSidebar.jpg";
 import baseballSidebar from "./assets/images/baseballSidebar.jpg";
 import softballSidebar from "./assets/images/softballSidebar.jpg";
-import { soccerSchedule, stadiumSchedule, tennisSchedule, baseballSchedule, softballSchedule, displayGames } from './schedule.js';
+import hornerSidebar from "./assets/images/hornerSidebar.jpg";
+import arenaSidebar from "./assets/images/arenaSidebar.png";
+import gym from "./assets/images/gym.png";
+import basketball from "./assets/images/basketball.jpg";
+import { soccerSchedule, stadiumSchedule, tennisSchedule, baseballSchedule, softballSchedule, arenaSchedule, displayGames } from './schedule.js';
 import { createFeature, setFeatureStyle } from './features';
 import {coords} from './coords';
 
-// athletic features
+// athletic links and features
 const soccerLinks = ['https://athletics.hanover.edu/sports/mens-soccer/schedule/2024', 'https://athletics.hanover.edu/sports/womens-soccer/schedule']
 const tennisLinks = ['https://athletics.hanover.edu/sports/mens-tennis/schedule/2023-24', "https://athletics.hanover.edu/sports/womens-tennis/schedule/2024-25"]
 const stadiumLinks = ['https://athletics.hanover.edu/sports/football/schedule/2024', "https://athletics.hanover.edu/sports/mens-lacrosse/schedule/2024", "https://athletics.hanover.edu/sports/womens-lacrosse/schedule"]
+const arenaLinks = ['https://athletics.hanover.edu/sports/mens-basketball/schedule/2024-25', 'https://athletics.hanover.edu/sports/womens-basketball/schedule/2024-25', 'https://athletics.hanover.edu/sports/womens-volleyball/schedule/2024']
 
 const stadiumFeature = createFeature("Alumni Stadium", "Athletics", coords.stadium, stadiumLinks, stadiumSidebar, "The 4,000-seat venue, with its all-weather artificial surface, is home to Hanover's football, men's and women's lacrosse and men's and women's track & field teams. The stadium is a part of Hanover's Outdoor Athletic Complex, which accommodates facilities for 15 of the College's outdoor sports. <br><br>The stadium features a three-level press box, which includes locker rooms, classrooms, athletic training offices and equipment and offices for the Panther football coaching staff. The College's golf team also has an indoor practice facility located on the first floor of the stadium.");
 const soccerFeature = createFeature("Soccer Fields", "Athletics", coords.soccer, soccerLinks, soccerSidebar, "The men's and women's soccer programs use two natural turf fields, including a practice and a game field, and also host occasional matches on Alumni Stadium's artificial surface. <br><br> The game field also features the Hagenah Press Box, sheltered benches for each team, a scoreboard at each end of the field, and seating down the far side.");
 const tennisFeature = createFeature("Zeddies Tennis Center", "Athletics", coords.tennis, tennisLinks, tennisSidebar, "Completed in 2012, the Zeddies Tennis Center, made possible by a gift from Michael ’77 and Judy Zeddies, features a total of eight courts.<br><br>In addition to the eight courts, Zeddies Tennis Center also consists of an adjacent lighted pavilion and storage space. <br><br> Part of the Panther Athletic Complex, Zeddies Tennis Center sits directly behind Alumni Stadium and is adjacent to grass practice fields that are available for the College’s outdoor teams and intramural sports.");
 const baseballFeature = createFeature("K.T. Young Ballpark", "Athletics", coords.baseball, 'https://athletics.hanover.edu/sports/baseball/schedule/2024', baseballSidebar,"Scenic K.T. Young Ballpark, home to the Panthers since 1972, is one of the nicest in the Midwest. The field saw recent improvements in 2014 when professional style dugouts and bullpens were added along with a press box, a new scoreboard, and two 70-foot batting cages down the left field line. It features a crushed red brick and natural turf infield and an outfield fence lined with more than 100 trees. The field also has a sprinkler system throughout the field.<br><br>The park is named after Kenneth T. Young '65 and in memory of Thomas D. Young '39 for their participation in and support of athletic programs at Hanover College.<br><br>The field is named Dick Naylor Field in honor of former head baseball coach Dick Naylor for his outstanding service to Hanover College and his accomplishments as head baseball coach for 36 years.<br><br>The Gaunt Grandstands and Press Box are named in honor of Jim '67 and Kate Gaunt for their special interest in the students of Hanover College and for their generous financial support to the athletic facilities project of the Live Our Loyalty Campaign. " )
 const softballFeature = createFeature("Kops-Bedel Stadium", "Athletics", coords.softball, 'https://athletics.hanover.edu/sports/softball', softballSidebar, "Hanover's softball team plays on one of the Midwest's finest fields. Kops-Bedel Stadium features a crushed red-brick infield and an agrilime warning track in the outfield along with professional style dugouts, bullpens for each side, batting cages, and a press box.<br><br>The stadium is named in honor of Elaine E. Kops-Bedel '74 and Eric J. Bedel in recognition of her special interest in the women students of Hanover College, her leadership in securing financial support for athletic facilities, and their generous contributions to the Live Our Loyalty Campaign.<br><br>The field is named Brouillette Field for Donald G. & Marilyn Brouillette by their daughter, JoAnn Brouillette '83 in honor of their inspiration and impact on family, community, Hanover College, and women's sports.<br><br>The Rector-Gleason Grandstands and Press Box are named in honor of Greg '72 and Kristine Rector Gleason '73 in recognition of their support of the Live Our Loyalty Campaign of Hanover College.");
-//const basketballFeature = 
+const hornerFeature = createFeature("Horner Center", "Athletics", coords.horner, '', hornerSidebar, "The Horner Health and Recreation Center supports the Hanover community’s pursuit of recreational and intercollegiate sports, physical fitness and state-of-the-art athletic training program. Opened in 1995, the Horner Center is named in honor of Dr. John Horner, President of Hanover College from 1958-1987 and his wife, Anne.<br><br>The Horner Center contains instructional facilities for the Kinesiology and Integrative Physiology program, practice and performance areas for the College’s intercollegiate sports teams and general recreation and fitness areas. The facility features a performance gymnasium, multi-sports forum, weight room, running track, racquetball courts, classrooms, locker rooms and other related features.<br><br>Collier Arena seats 2,000 spectators for Hanover’s varsity basketball and volleyball contests. The arena can seat up to 3,000 for commencement, convocations, concerts and other community events.<br><br>Struck Gymnasium features three basketball courts and accommodates a wide range of activities such as tennis, volleyball and badminton. The space also includes indoor hitting cages for softball, baseball and golf.<br><br>Adjacent facilities include the three-lane Mitchell Running Track, three racquetball courts, a squash court and a 6,000-square-foot fitness center. The fitness center contains more than 75 pieces of weight-lifting equipment and aerobic exercise machines.<br><br><b>Regular Hours</b><br><br>Monday – Thursday: 6 a.m. – 10 p.m.<br><br>Friday: 6 a.m. – 9 p.m.<br><br>Saturday: 8 a.m. – 9 p.m.<br><br>Sunday: Noon – 9 p.m.<br><br><b>Summer Hours</b><br><br>Monday – Thursday: 6 a.m. – 7 p.m.<br><br>Friday: 6 a.m. – 6 p.m.<br><br>Saturday: 8 a.m. – 6 p.m.<br><br>Sunday: Noon – 6 p.m.");
+const arenaFeature = createFeature("Collier Arena", "Athletics", coords.arena, arenaLinks, arenaSidebar, "Collier Arena, which is located inside the Horner Health & Recreation Center, is home to the Hanover basketball and volleyball programs. The arena seats 2,000 spectators for athletics events but also can be configured for everything from concerts and speeches to dinners, meetings and graduation.<br><br>During the 2016-17 academic year, the venue not only hosted regular season events for Hanover’s athletic teams, but also the Heartland Collegiate Athletic Conference Volleyball and Men’s Basketball postseason tournaments, as well as the NCAA Division III Men’s Basketball National Tournament First and Second Rounds.<br><br>The arena also became the new home for the College’s rebranded, “Hanover Enrichment Series” in 2016-17. For non-athletic events, the facility can seat up to 3,000 people.");
 
 // dining features
 const shoeboxFeature = createFeature("The Shoebox", "Dining", coords.shoebox, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', shoeboxSidebar, "The Shoebox is a place where you can kick back and relax with friends while enjoying various activities such as- singing karaoke, listening to DJs and bands or watching sports and your favorite TV shows. <br><br>The menu includes items such as: wraps, burgers, wings/tenders, quesadillas, salads, shakes and more! We also offer beer and wine to those who are 21 years of age and over.<br><br>ACADEMIC YEAR HOURS <br>Monday: Closed<br><br>Tuesday - Sunday: 5pm — 10pm<br><br>Meal Exchange Hours: Tuesday - Sunday: 5pm — 10pm<br>(All Plans limited to 1 swipe per Retail Meal Period)");
@@ -104,7 +110,7 @@ const pointFeature = createFeature("The Point", "Misc", coords.point, '', pointS
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
   sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
-  coulterFeature, scienceCenterFeature, pointFeature,
+  coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature,
   blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature
 ];
 // for feature of array feature name : feature
@@ -148,12 +154,17 @@ const setIconStyle = (feature, src) => {
 };
 
 // Apply styles based on zoom level
+// athletic
 setFeatureStyle(stadiumFeature, stadium, map.getView().getZoom());
 setFeatureStyle(soccerFeature, soccerField, map.getView().getZoom());
 setFeatureStyle(tennisFeature, tennis, map.getView().getZoom());
 setFeatureStyle(baseballFeature, baseball, map.getView().getZoom());
 setFeatureStyle(softballFeature, softball, map.getView().getZoom());
+setFeatureStyle(hornerFeature, gym, map.getView().getZoom());
+setFeatureStyle(arenaFeature, basketball, map.getView().getZoom());
 
+
+// greek
 setFeatureStyle(phiDeltaThetaFeature, phidelt, map.getView().getZoom());
 setFeatureStyle(lambdaChiAlphaFeature, lambda, map.getView().getZoom());
 setFeatureStyle(sigmaChiFeature, sigma, map.getView().getZoom());
@@ -163,14 +174,18 @@ setFeatureStyle(adpiFeature, adpi, map.getView().getZoom());
 setFeatureStyle(phimuFeature, phimu, map.getView().getZoom());
 setFeatureStyle(thetaFeature, theta, map.getView().getZoom());
 
+// misc
 setFeatureStyle(pointFeature, thepoint, map.getView().getZoom());
 
+// dining
 setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
 setFeatureStyle(ugFeature, dining, map.getView().getZoom());
 
+// academic
 setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
 setFeatureStyle(scienceCenterFeature, classroom, map.getView().getZoom());
 
+// residence
 setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
 setFeatureStyle(coulterFeature, residence, map.getView().getZoom());
 setFeatureStyle(blytheFeature, residence, map.getView().getZoom());
@@ -188,6 +203,8 @@ map.on('moveend', () => {
   setIconStyle(tennisFeature, tennis);
   setIconStyle(baseballFeature, baseball);
   setIconStyle(softballFeature, softball);
+  setIconStyle(hornerFeature, gym);
+  setIconStyle(arenaFeature, basketball);
 
   setIconStyle(phiDeltaThetaFeature, phidelt);
   setIconStyle(lambdaChiAlphaFeature, lambda);  
@@ -205,7 +222,6 @@ map.on('moveend', () => {
 
   setIconStyle(dugganLibraryFeature, library);
   setIconStyle(scienceCenterFeature, classroom);
-
 
   setIconStyle(greenwoodSuitesFeature, residence);
   setIconStyle(coulterFeature, residence);
@@ -226,7 +242,7 @@ map.on('pointermove', (evt) => {
   if (evt.dragging) return;
 
   const pixel = map.getEventPixel(evt.originalEvent);
-  const feature = map.forEachFeatureAtPixel(pixel, (feature) => feature);
+  const feature = map.forEachFeatureAtPixel(pixel, (feature) => feature); // for each pixel the feature is covering then...
 
   if (feature) {
     popup.innerHTML = feature.get('name'); // Show name in popup
@@ -241,7 +257,7 @@ map.on('pointermove', (evt) => {
 // Handle click events to open the sidebar with feature info
 map.on('click', (evt) => {
   const pixel = map.getEventPixel(evt.originalEvent);
-  const feature = map.forEachFeatureAtPixel(pixel, (feature) => {if(feature.get('type') == 'red_marker' || feature.get('type') == 'current_location_marker' ) return false; else return feature});
+  const feature = map.forEachFeatureAtPixel(pixel, (feature) => {if(feature.get('type') == 'red_marker' || feature.get('type') == 'current_location_marker' ) return false; else return feature}); // makes the red and blue markers unclickable
 
   const name = document.getElementById('name');
   const info = document.getElementById('info');
@@ -278,7 +294,14 @@ map.on('click', (evt) => {
         info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Football Schedule</a></p>`;
         info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Mens Lacrosse Schedule</a></p>`;
         info.innerHTML += `<p><a href="${scheduleLink[2]}" target="_blank">View Womens Lacrosse Schedule</a></p>`;
-      } else if (featureName === "Zeddies Tennis Center") {
+      } 
+      else if (featureName === 'Collier Arena') {
+        displayGames(arenaSchedule);
+        info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Mens Basketball Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Womens Basketball Schedule</a></p>`;
+        info.innerHTML += `<p><a href="${scheduleLink[2]}" target="_blank">View Womens Volleyball Schedule</a></p>`;
+      }
+      else if (featureName === "Zeddies Tennis Center") {
         displayGames(tennisSchedule);
         info.innerHTML += `<p><a href="${scheduleLink[0]}" target="_blank">View Mens Tennis Schedule</a></p>`;
         info.innerHTML += `<p><a href="${scheduleLink[1]}" target="_blank">View Womens Tennis Schedule</a></p>`;
@@ -319,8 +342,8 @@ const locationsInBBox = [
   "Admission", "IT/Academic Computing", "Crowe Hall", "Lynn Hall", "Faculty Office Building", "Science Center", "Science Hall", "Parker Hall", "Classic Hall",
   "Hendricks Hall", "President's Residence", "Brown Chapel", "Brown Campus Center", "The Quad", "Donner Lawn", "Long Adminstration Building",
   "Donner Hall", "Ide Hall", "The Other Place", "Phi Gamma Delta Fraternity", "Ogle Center", "Campus Safety", "Katharine Parker Hall", "Chi Omega Sorority",
-  "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority", "The Underground", "The Point"
-]
+  "Alpha Delta Pi Sorority", "Phi Mu Sorority", "Kappa Alpha Theta Sorority", "The Underground", "The Point", "Collier Arena"
+]// used in the location dropdown
 
 const locationInput = document.getElementById("location-input");
 const locationDropdown = document.getElementById("location-dropdown");

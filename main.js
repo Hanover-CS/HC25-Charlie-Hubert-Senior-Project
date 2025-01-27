@@ -42,6 +42,8 @@ import shoeboxSidebar from "./assets/images/shoeboxSidebar.jpg";
 import ugSidebar from "./assets/images/ugSidebar.jpg";
 import pointSidebar from "./assets/images/pointSidebar.jpg";
 import thepoint from "./assets/images/thepoint.png";
+import stars from "./assets/images/stars.png";
+import observatory from "./assets/images/culbertsonObservatory.jpg";
 import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
 import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
 import scienceCenterSidebar from "./assets/images/scienceCenterSidebar.jpg";
@@ -102,16 +104,16 @@ const kpFeature = createFeature("Katherine Parker Hall", "Residence Hall", coord
 
 // Academic features
 const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
-const scienceCenterFeature = createFeature("Science Center", "Classroom", coords.scienceCenter, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.")
+const scienceCenterFeature = createFeature("Science Center", "Classroom", coords.scienceCenter, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
 
 // Misc Features
 const pointFeature = createFeature("The Point", "Misc", coords.point, '', pointSidebar, "The Point at Hanover College is a breathtaking location that epitomizes the natural beauty and serene charm of the campus. Nestled on the bluffs overlooking the confluence of the Ohio River and rolling hills of Kentucky, The Point offers sweeping panoramic views that captivate students, visitors, and alumni alike. It's more than just a scenic spot; it's a place of inspiration, reflection, and connection. Whether you're watching a golden sunset, enjoying a quiet moment of study, or celebrating life’s milestones, The Point stands as a timeless symbol of Hanover's commitment to harmony between education and nature." )
-
+const CulberstonObservatoryFeature = createFeature("Culbertson Observatory", "Misc", coords.observatory, '', observatory, "The Hanover College Culbertson Observatory was constructed in 1992 with generous foundation and alumni contributions and houses a 16 seat classroom. The dome and original refractor type telescope were part of the original Observatory built in 1889." );
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
   sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
   coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature,
-  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature
+  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature
 ];
 // for feature of array feature name : feature
 
@@ -176,6 +178,7 @@ setFeatureStyle(thetaFeature, theta, map.getView().getZoom());
 
 // misc
 setFeatureStyle(pointFeature, thepoint, map.getView().getZoom());
+setFeatureStyle(CulberstonObservatoryFeature, stars, map.getView().getZoom());
 
 // dining
 setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
@@ -216,6 +219,7 @@ map.on('moveend', () => {
   setIconStyle(thetaFeature, theta);
 
   setIconStyle(pointFeature, thepoint);
+  setIconStyle(CulberstonObservatoryFeature, stars)
 
   setIconStyle(shoeboxFeature, dining);
   setIconStyle(ugFeature, dining);
@@ -332,11 +336,11 @@ map.on('click', (evt) => {
 // Define the bounding box around Hanover College
 const boundingBox = {
   southWest: { lat: 38.711676, lon: -85.467831 },
-  northEast: { lat: 38.721320, lon: -85.455214 },
+  northEast: { lat: 38.722320, lon: -85.455214 },
 };
 
 const locationsInBBox = [
-  "Culberston Observatory", "Soccer Fields", "Zeddies Tennis Center", "K.T. Young Ballpark", "Kops-Bedel Stadium",
+  "Culbertson Observatory", "Soccer Fields", "Zeddies Tennis Center", "K.T. Young Ballpark", "Kops-Bedel Stadium",
   "The Shoebox", "Alumni Stadium", "Phi Delta Theta", "Coulter House", "Lynn Center for Fine Arts", "Greenwood Suites", "File House",
   "Lambda Chi Fraternity", "Sigma Chi Fraternity", "Charters of Freedom", "Wiley Hall", "Horner Center", "Duggan Library", "Blythe Hall", "Newby Hall",
   "Admission", "IT/Academic Computing", "Crowe Hall", "Lynn Hall", "Faculty Office Building", "Science Center", "Science Hall", "Parker Hall", "Classic Hall",
@@ -459,7 +463,7 @@ function searchLocation() {
           currentSearchedFeature = new Feature({
             name: location,
             type: 'red_marker',
-            geometry: new Point(coordinates), // Use the coordinates as is (already in EPSG:3857)
+            geometry: new Point(coordinates),
           });
 
           // Style for the red marker

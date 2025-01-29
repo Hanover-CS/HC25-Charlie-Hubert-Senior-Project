@@ -44,6 +44,8 @@ import pointSidebar from "./assets/images/pointSidebar.jpg";
 import thepoint from "./assets/images/thepoint.png";
 import stars from "./assets/images/stars.png";
 import observatory from "./assets/images/culbertsonObservatory.jpg";
+import lynnHallSidebar from "./assets/images/lynnhallsidebar.jpg";
+import classicHallSidebar from "./assets/images/classicHallSidebar.jpg";
 import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
 import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
 import scienceCenterSidebar from "./assets/images/scienceCenterSidebar.jpg";
@@ -105,6 +107,10 @@ const kpFeature = createFeature("Katherine Parker Hall", "Residence Hall", coord
 // Academic features
 const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
 const scienceCenterFeature = createFeature("Science Center", "Classroom", coords.scienceCenter, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
+const classicHallFeature = createFeature("Classic Hall", "Classroom", coords.classic, "", classicHallSidebar, "Classic Hall was constructed on a bluff known as the Point, and College classes were moved to that location. 'Old Classic' would be Hanover's signature building for more than 90 years. However on December 19, 1941, a large fire destroyed most of Classic Hall. It has since been reconstructed and has three stories of classrooms hosting all types of courses.");
+const scienceHallFeature = createFeature("Science Hall", "Classroom", coords.scienceHall, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
+const lynnHallFeature = createFeature("Lynn Hall", "Classroom", coords.lynn, "", lynnHallSidebar, "HOUSES: 90 STUDENTS<br><br>Lynn Hall once served as the athletic area for campus.<br><br>All rooms are double rooms in various suite-style living arrangements. Each suite shares a common bathroom. The building has various common lounges, an efficiency kitchen and laundry facilities.<br><br>Lynn Hall was an underutilized gymnasium located at the center of a residential campus. The architect proposed to re-purpose Lynn Hall as an integrated live-learn community. The College accepted the plan and today the renovated building contains two large classrooms, informal study, lounges and residential suites.");
+const cfaFeature = createFeature("Lynn Center for Fine Arts", "Classroom", coords.cfa, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
 
 // Misc Features
 const pointFeature = createFeature("The Point", "Misc", coords.point, '', pointSidebar, "The Point at Hanover College is a breathtaking location that epitomizes the natural beauty and serene charm of the campus. Nestled on the bluffs overlooking the confluence of the Ohio River and rolling hills of Kentucky, The Point offers sweeping panoramic views that captivate students, visitors, and alumni alike. It's more than just a scenic spot; it's a place of inspiration, reflection, and connection. Whether you're watching a golden sunset, enjoying a quiet moment of study, or celebrating life’s milestones, The Point stands as a timeless symbol of Hanover's commitment to harmony between education and nature." )
@@ -112,8 +118,8 @@ const CulberstonObservatoryFeature = createFeature("Culbertson Observatory", "Mi
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
   sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
-  coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature,
-  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature
+  coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature, classicHallFeature, scienceHallFeature, lynnHallFeature,
+  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature, cfaFeature
 ];
 // for feature of array feature name : feature
 
@@ -187,6 +193,10 @@ setFeatureStyle(ugFeature, dining, map.getView().getZoom());
 // academic
 setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
 setFeatureStyle(scienceCenterFeature, classroom, map.getView().getZoom());
+setFeatureStyle(classicHallFeature, classroom, map.getView().getZoom());
+setFeatureStyle(cfaFeature, classroom, map.getView().getZoom());
+setFeatureStyle(lynnHallFeature, classroom, map.getView().getZoom());
+setFeatureStyle(scienceHallFeature, classroom, map.getView().getZoom());
 
 // residence
 setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
@@ -226,6 +236,11 @@ map.on('moveend', () => {
 
   setIconStyle(dugganLibraryFeature, library);
   setIconStyle(scienceCenterFeature, classroom);
+  setIconStyle(classicHallFeature, classroom);
+  setIconStyle(scienceHallFeature, classroom);
+  setIconStyle(lynnHallFeature, classroom);
+  setIconStyle(cfaFeature, classroom);
+
 
   setIconStyle(greenwoodSuitesFeature, residence);
   setIconStyle(coulterFeature, residence);

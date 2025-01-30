@@ -40,11 +40,13 @@ import phimuSidebar from "./assets/images/phimuSidebar.png";
 import thetaSidebar from "./assets/images/thetaSidebar.jpg";
 import shoeboxSidebar from "./assets/images/shoeboxSidebar.jpg";
 import ugSidebar from "./assets/images/ugSidebar.jpg";
+import ccSidebar from "./assets/images/ccSidebar.jpg";
 import pointSidebar from "./assets/images/pointSidebar.jpg";
 import thepoint from "./assets/images/thepoint.png";
 import stars from "./assets/images/stars.png";
 import observatory from "./assets/images/culbertsonObservatory.jpg";
 import lynnHallSidebar from "./assets/images/lynnhallsidebar.jpg";
+import cfaSidebar from "./assets/images/cfaSidebar.jpg";
 import classicHallSidebar from "./assets/images/classicHallSidebar.jpg";
 import greenwoodSidebar from "./assets/images/greenwoodSidebar.jpg";
 import dugganLibrarySidebar from "./assets/images/librarySidebar.jpg";
@@ -56,6 +58,7 @@ import croweSidebar from "./assets/images/croweSidebar.jpg";
 import wileySidebar from "./assets/images/wileySidebar.jpg";
 import ideSidebar from "./assets/images/ideSidebar.jpg";
 import kpSidebar from "./assets/images/kpSidebar.jpg";
+import ogleSidebar from "./assets/images/ogleSidebar.jpg";
 import baseballSidebar from "./assets/images/baseballSidebar.jpg";
 import softballSidebar from "./assets/images/softballSidebar.jpg";
 import hornerSidebar from "./assets/images/hornerSidebar.jpg";
@@ -83,6 +86,7 @@ const arenaFeature = createFeature("Collier Arena", "Athletics", coords.arena, a
 // dining features
 const shoeboxFeature = createFeature("The Shoebox", "Dining", coords.shoebox, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', shoeboxSidebar, "The Shoebox is a place where you can kick back and relax with friends while enjoying various activities such as- singing karaoke, listening to DJs and bands or watching sports and your favorite TV shows. <br><br>The menu includes items such as: wraps, burgers, wings/tenders, quesadillas, salads, shakes and more! We also offer beer and wine to those who are 21 years of age and over.<br><br>ACADEMIC YEAR HOURS <br>Monday: Closed<br><br>Tuesday - Sunday: 5pm — 10pm<br><br>Meal Exchange Hours: Tuesday - Sunday: 5pm — 10pm<br>(All Plans limited to 1 swipe per Retail Meal Period)");
 const ugFeature = createFeature("The Underground", "Dining", coords.ug, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', ugSidebar, "The Underground is a grill and burrito style fast food place on campus with options varying from fried chicken sandwiches to quesadillas. It has a dark atmosphere with plenty of tables many of which have chargers making this a perfect place for a late night study snack, or when you are in a hurry and need something quick. It also has Cafe 1827 which is a starbucks.<br><br>ACADEMIC YEAR HOURS<br><br>Monday - Sunday: 11am — 11 pm<br><br>Meal Exhange Hours: Monday - Sunday 11am - 11pm" )
+const ccFeature = createFeature("Brown Campus Center", "Dining", coords.cc, 'https://hanoverdining.catertrax.com/shopportal.asp?pageref=WeeklyMenu&intOrderID=&intCustomerID=', ccSidebar, "The Brown Campus Center Open every day for Breakfast & Lunch. Open Monday through Friday for Dinner. The Brown Campus Center Dining Room is an All-You-Care-To-Eat location with all of your favorites.<br><br>ACADEMIC YEAR HOURS<br><br>Monday - Friday 7am — 8pm<br>Breakfast 7am - 11am<br>Lunch 11am - 5pm<br>Dinner 5pm - 8pm<br><br>Saturday - Sunday 8:30am — 1:30pm<br>Breakfast 8:30am - 11:00am<br>Lunch 11:00am - 1:30pm" )
 
 // greek features
 const phiDeltaThetaFeature = createFeature("Phi Delta Theta", "Greek", coords.PhiDeltaTheta, 'https://hanover.phideltatheta.org/', phiDeltaThetaSidebar, "Phi Delta Theta (ΦΔΘ) is a fraternity founded in 1848 with a commitment to the principles of friendship, sound learning, and moral rectitude. The fraternity focuses on fostering personal growth, leadership, academic achievement, and brotherhood among its members. Phi Delta Theta aims to develop men of strong character who contribute positively to their communities and uphold high standards of integrity. The fraternity is known for its dedication to creating lasting relationships and providing a supportive environment for members' success both during college and beyond.<br><br>Phi Delta Theta is a prominent fraternity at Hanover College, focused on leadership and academic success. The fraternity provides a supportive community for its members.");
@@ -96,6 +100,7 @@ const thetaFeature = createFeature("Kappa Alpha Theta Sorority", "Greek", coords
 
 // residence features
 const greenwoodSuitesFeature = createFeature("Greenwood Suites", "Residence Hall", coords.greenwood, '', greenwoodSidebar, "HOUSES: 72 STUDENTS <br><br>AVERAGE ROOM SIZE: 14’1″ X 12’4″ <br><br>Students living in the Greenwood Suites are more autonomous with only upper-class students living in the complex. The individual suites in Greenwood house students in a suite of three bedrooms. Two bedrooms share a bath, while the third has its own bathroom. Two lower-level suites have roll-in showers to make them handicap-accessible. Each suite has a small efficiency kitchen with a compact refrigerator and a sink. A range is not allowed; however, the residents may bring in a microwave. All suites are air-conditioned with full laundry facilities available onsite.");
+const ogleFeature = createFeature("Ogle Center", "Residence Hall", coords.ogle, '', ogleSidebar, "HOUSES: 42 STUDENTS<br><br>AVERAGE ROOM SIZE: 11’9″ X 13’4″<br><br>The Ogle Center is a suite-style living environment. The individual suites house seven students in a suite of four bedrooms (three doubles and one single). Two bedrooms have their own bathrooms, while the third double shares a bathroom with the single room.<br><br>Each suite has a small efficiency kitchen with a compact refrigerator and a sink. A range is not allowed; however, the residents may bring in a microwave. The suite also has air-conditioning, laundry facilities and a living room with skylights.");
 const coulterFeature = createFeature("Coulter House", "Residence Hall", coords.coulter, '', coulterSidebar, "HOUSES: 38 STUDENTS<br><br>AVERAGE ROOM SIZE: 13′ X 12′<br><br>Built in 2003 and named for botanists John Merle Coulter and Stanley Moses Coulter, great-grandsons of John Finley Crowe, Hanover’s founder.<br><br>Coulter House houses approximately 38 students in a traditional style. Most rooms are doubles, but there are a few single rooms as well as one triple and one quad. There are common bathrooms for each wing, as well as common lounges and laundry facilities." );
 const croweFeature = createFeature("Crowe Hall", "Residence Hall", coords.crowe, '', croweSidebar, "HOUSES: 120 STUDENTS<br><br>AVERAGE ROOM SIZE: 13’5″ X 13’3″<br><br>Crowe Hall is one of the suite-style residence halls for first-year and upper-class residents, accommodating 120 students. There are common bathrooms for each wing, common lounges and laundry facilities." );
 const donnerFeature = createFeature("Donner Hall", "Residence Hall", coords.donner, '', donnerSidebar, "HOUSES: 120 FIRST-YEAR STUDENTS<br><br>AVERAGE ROOM SIZE: 13’1″ X 12′<br><br>First-year living featuring primarily double rooms. There are two common bathrooms per floor, one for each wing, common floor lounges and laundry facilities. This hall is co-ed by floor.<br>Donner Hall is undergoing a massive renovation in 2021 with new bathrooms, laundry room and yoga and circuit training rooms. It is also ADA-accessible via a new entrance." );
@@ -108,9 +113,9 @@ const kpFeature = createFeature("Katherine Parker Hall", "Residence Hall", coord
 const dugganLibraryFeature = createFeature("Duggan Library", "Library", coords.library, 'https://www.hanover.edu/library', dugganLibrarySidebar, "Duggan Library is the main library at Hanover College, offering a wide selection of books, journals, and digital resources for students and faculty.<br><br>The first floor remains open until closing time. The second and third floors close 15 minutes prior to the listed closing time.<br><br>Monday - Thursday: 7:30 a.m. - 10:00 p.m.<br>Friday: 7:30 a.m. - 5:00 p.m.<br>Saturday: noon - 5:00 p.m.<br>Sunday: 1:00 p.m. - 10:00 p.m.");
 const scienceCenterFeature = createFeature("Science Center", "Classroom", coords.scienceCenter, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
 const classicHallFeature = createFeature("Classic Hall", "Classroom", coords.classic, "", classicHallSidebar, "Classic Hall was constructed on a bluff known as the Point, and College classes were moved to that location. 'Old Classic' would be Hanover's signature building for more than 90 years. However on December 19, 1941, a large fire destroyed most of Classic Hall. It has since been reconstructed and has three stories of classrooms hosting all types of courses.");
-const scienceHallFeature = createFeature("Science Hall", "Classroom", coords.scienceHall, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
+const scienceHallFeature = createFeature("Science Hall", "Classroom", coords.scienceHall, "", scienceCenterSidebar, "Hanover College’s Science Hall is a no-nonsense, practical space that gets the job done without unnecessary frills. It provides students with the essential classrooms and labs needed for hands-on learning in biology, chemistry, and environmental science. While it may not boast state-of-the-art features or cutting-edge design, its simplicity fosters a focused academic environment where students can engage in meaningful scientific exploration. The building’s unassuming nature reflects Hanover’s dedication to providing a strong educational foundation without distractions, making it a dependable and functional part of campus life.");
 const lynnHallFeature = createFeature("Lynn Hall", "Classroom", coords.lynn, "", lynnHallSidebar, "HOUSES: 90 STUDENTS<br><br>Lynn Hall once served as the athletic area for campus.<br><br>All rooms are double rooms in various suite-style living arrangements. Each suite shares a common bathroom. The building has various common lounges, an efficiency kitchen and laundry facilities.<br><br>Lynn Hall was an underutilized gymnasium located at the center of a residential campus. The architect proposed to re-purpose Lynn Hall as an integrated live-learn community. The College accepted the plan and today the renovated building contains two large classrooms, informal study, lounges and residential suites.");
-const cfaFeature = createFeature("Lynn Center for Fine Arts", "Classroom", coords.cfa, "", scienceCenterSidebar, "The Science Center consists of a new two-story building adjacent to an existing building, and houses classroom and laboratory space for the various science departments at the college, as well as administrative offices. The structural steel frame is clad with traditional brick architecture tying in with the historic campus. The building is topped with a copper standing steam mansard roof system complete with a widow's walk and cupola.");
+const cfaFeature = createFeature("Lynn Center for Fine Arts", "Arts", coords.cfa, "https://www.hanover.edu/academics/programs/music/performances/", cfaSidebar, "The Lynn Center for Fine Arts at Hanover College serves as a hub for artistic expression, creativity, and performance. Home to the college’s theater, music, and visual arts programs, the facility includes a theater, recital hall, art studios, and classrooms designed to support both academic instruction and student-led productions. The center regularly hosts concerts, plays, gallery exhibitions, and other cultural events, enriching the campus community and providing students with hands-on experience in the fine arts. With its modern amenities and commitment to fostering artistic talent, the Lynn Center for Fine Arts plays a vital role in Hanover College’s dedication to a well-rounded liberal arts education.");
 
 // Misc Features
 const pointFeature = createFeature("The Point", "Misc", coords.point, '', pointSidebar, "The Point at Hanover College is a breathtaking location that epitomizes the natural beauty and serene charm of the campus. Nestled on the bluffs overlooking the confluence of the Ohio River and rolling hills of Kentucky, The Point offers sweeping panoramic views that captivate students, visitors, and alumni alike. It's more than just a scenic spot; it's a place of inspiration, reflection, and connection. Whether you're watching a golden sunset, enjoying a quiet moment of study, or celebrating life’s milestones, The Point stands as a timeless symbol of Hanover's commitment to harmony between education and nature." )
@@ -119,7 +124,7 @@ const CulberstonObservatoryFeature = createFeature("Culbertson Observatory", "Mi
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
   sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
   coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature, classicHallFeature, scienceHallFeature, lynnHallFeature,
-  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature, cfaFeature
+  blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature, cfaFeature, ccFeature, ogleFeature
 ];
 // for feature of array feature name : feature
 
@@ -189,6 +194,7 @@ setFeatureStyle(CulberstonObservatoryFeature, stars, map.getView().getZoom());
 // dining
 setFeatureStyle(shoeboxFeature, dining, map.getView().getZoom());
 setFeatureStyle(ugFeature, dining, map.getView().getZoom());
+setFeatureStyle(ccFeature, dining, map.getView().getZoom());
 
 // academic
 setFeatureStyle(dugganLibraryFeature, library, map.getView().getZoom());
@@ -200,6 +206,7 @@ setFeatureStyle(scienceHallFeature, classroom, map.getView().getZoom());
 
 // residence
 setFeatureStyle(greenwoodSuitesFeature, residence, map.getView().getZoom());
+setFeatureStyle(ogleFeature, residence, map.getView().getZoom());
 setFeatureStyle(coulterFeature, residence, map.getView().getZoom());
 setFeatureStyle(blytheFeature, residence, map.getView().getZoom());
 setFeatureStyle(donnerFeature, residence, map.getView().getZoom());
@@ -233,6 +240,7 @@ map.on('moveend', () => {
 
   setIconStyle(shoeboxFeature, dining);
   setIconStyle(ugFeature, dining);
+  setIconStyle(ccFeature, dining);
 
   setIconStyle(dugganLibraryFeature, library);
   setIconStyle(scienceCenterFeature, classroom);
@@ -242,7 +250,8 @@ map.on('moveend', () => {
   setIconStyle(cfaFeature, classroom);
 
 
-  setIconStyle(greenwoodSuitesFeature, residence);
+  setIconStyle(greenwoodSuitesFeature, residence);  
+  setIconStyle(ogleFeature, residence);
   setIconStyle(coulterFeature, residence);
   setIconStyle(blytheFeature, residence);
   setIconStyle(donnerFeature, residence);
@@ -338,6 +347,9 @@ map.on('click', (evt) => {
     else if(feature.get('type') == 'Dining'){
       info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Menu</a></p>`;
       // 3D info.innerHTML += `<p><a href="${'https://my.matterport.com/show/?m=uvZL11HVeY5'}" target="_blank">View ${featureName} 3D</a></p>`;
+    }
+    else if (feature.get('type') == 'Arts'){
+      info.innerHTML += `<p><a href="${scheduleLink}" target="_blank">View ${featureName} Performance Schedule</a></p>`;
     }
     else {
       info.innerHTML += '';

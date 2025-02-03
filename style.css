@@ -137,11 +137,11 @@ html, body {
   background-color: #f0f0f0; /* Hover effect */
 }
 
-/* Button Container Style */
+/* Positioning the "Go to Current Location" button differently on mobile */
 #current-location-btn {
   position: absolute; /* Position it above the map */
-  top: 20px; /* Distance from the top of the map */
-  right: 20px; /* Distance from the right edge of the map */
+  top: 20px; /* Default distance from the top of the map */
+  right: 20px; /* Default distance from the right edge of the map */
   background-color: #007bff; /* Blue background */
   color: white;
   border: none; 
@@ -166,43 +166,16 @@ html, body {
   transform: translateY(0); /* Return to normal position on click */
 }
 
-/* Route planner container */
-#route-planner {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+/* Adjusting the position of the button on mobile screens */
+@media (max-width: 767px) {
+  #current-location-btn {
+    top: auto; /* Remove top distance */
+    bottom: 20px; /* Place button near the bottom of the screen */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for exact center alignment */
+  }
 }
 
-#route-planner label,
-#route-planner input,
-#route-planner button {
-  margin-bottom: 5px;
-  display: block;
-}
-
-#route-planner input {
-  width: 80%; /* Adjust input width for mobile screens */
-  max-width: 250px;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
-#route-planner button {
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#route-planner button:hover {
-  background-color: #0056b3;
-}
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
@@ -213,13 +186,5 @@ html, body {
   #location-input, #search-button, #location-dropdown {
     width: 100%; /* Make search bar and dropdown full width */
     max-width: 100%; /* Remove max-width */
-  }
-
-  #route-planner {
-    width: 100%; /* Route planner takes full width */
-  }
-
-  #route-planner input, #route-planner button {
-    width: 100%;
   }
 }

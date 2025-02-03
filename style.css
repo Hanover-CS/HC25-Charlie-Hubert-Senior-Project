@@ -110,7 +110,7 @@ html, body {
   max-height: 200px;
   overflow-y: auto;
   background-color: white;
-  border: 2px solid #007BFF; /* Matches the input and button border */
+  border: 2px solid #007BFF; 
   border-radius: 0 0 20px 20px; /* Rounded bottom corners */
   box-sizing: border-box;
   z-index: 100;
@@ -136,15 +136,15 @@ html, body {
   top: 20px; /* Distance from the top of the map */
   right: 20px; /* Distance from the right edge of the map */
   background-color: #007bff; /* Blue background */
-  color: white; /* White text */
-  border: none; /* No border */
+  color: white;
+  border: none; 
   border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for better click area */
-  font-size: 14px; /* Text size */
-  font-weight: bold; /* Bold text */
+  padding: 10px 20px; 
+  font-size: 14px; 
+  font-weight: bold;
   cursor: pointer; /* Pointer cursor to indicate clickable */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
-  z-index: 1000; /* Ensure button is on top of the map */
+  z-index: 1000; 
   transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
 }
 

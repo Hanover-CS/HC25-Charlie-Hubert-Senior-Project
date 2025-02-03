@@ -71,7 +71,7 @@ const map = new Map({
     minZoom: 16,
   }),
 });
-
+window.map = map;
 // Function to set icon styles based on zoom level
 const setIconStyle = (feature, src) => {
   const zoom = map.getView().getZoom();

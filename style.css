@@ -46,7 +46,6 @@ html, body {
 #feature-image {
   margin-top: 20px;
   max-width: 100%;
-  display: none;
 }
 
 #info {
@@ -142,7 +141,7 @@ html, body {
   position: absolute; /* Position it above the map */
   top: 20px; /* Default distance from the top of the map */
   right: 20px; /* Default distance from the right edge of the map */
-  background-color: #007bff; /* Blue background */
+  background-color: #007bff; 
   color: white;
   border: none; 
   border-radius: 5px; /* Rounded corners */

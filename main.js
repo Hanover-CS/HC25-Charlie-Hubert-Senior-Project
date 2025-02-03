@@ -45,7 +45,6 @@ const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFea
   coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature, classicHallFeature, scienceHallFeature, lynnHallFeature,
   blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature, cfaFeature, ccFeature, ogleFeature
 ];
-// for feature of array feature name : feature
 
 // Create a vector source and add the feature
 const vectorSource = new VectorSource({
@@ -94,7 +93,6 @@ setFeatureStyle(baseballFeature, baseball, map.getView().getZoom());
 setFeatureStyle(softballFeature, softball, map.getView().getZoom());
 setFeatureStyle(hornerFeature, gym, map.getView().getZoom());
 setFeatureStyle(arenaFeature, basketball, map.getView().getZoom());
-
 
 // greek
 setFeatureStyle(phiDeltaThetaFeature, phidelt, map.getView().getZoom());

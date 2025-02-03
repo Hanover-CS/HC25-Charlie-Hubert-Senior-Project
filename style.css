@@ -3,7 +3,9 @@
 html, body {
   margin: 0;
   height: 100%;
+  font-family: Arial, sans-serif;
 }
+
 #map {
   position: absolute;
   top: 0;
@@ -14,8 +16,9 @@ html, body {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -400px; /* Initially hidden off-screen */
-  width: 300px;
+  left: -100%; /* Initially hidden off-screen */
+  width: 80%; /* Use a smaller width on mobile */
+  max-width: 300px;
   height: 100%;
   background-color: rgb(39, 8, 215);
   border: 5px solid #f10707;
@@ -45,9 +48,11 @@ html, body {
   max-width: 100%;
   display: none;
 }
+
 #info {
   margin-top: 20px;
 }
+
 #info a {
   color: white;      
   text-decoration: none; 
@@ -83,7 +88,8 @@ html, body {
   border: 2px solid #007BFF;
   border-radius: 20px 0 0 20px; /* Rounded left corners */
   outline: none;
-  width: 300px;
+  width: 80%; /* Make input more responsive on mobile */
+  max-width: 300px;
 }
 
 #search-button {
@@ -104,9 +110,10 @@ html, body {
 #location-dropdown {
   position: absolute;
   top: 100%; /* Positions directly below the search bar */
-  left: 48%; /* Centers the dropdown */
+  left: 50%; /* Centers the dropdown */
   transform: translateX(-50%); /* Adjusts for the exact center */
-  width: 300px; /* Same width as the search input */
+  width: 80%; /* Make the dropdown match input size */
+  max-width: 300px;
   max-height: 200px;
   overflow-y: auto;
   background-color: white;
@@ -159,9 +166,8 @@ html, body {
   transform: translateY(0); /* Return to normal position on click */
 }
 
-
- /* Route planner container */
- #route-planner {
+/* Route planner container */
+#route-planner {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -180,7 +186,8 @@ html, body {
 }
 
 #route-planner input {
-  width: 200px;
+  width: 80%; /* Adjust input width for mobile screens */
+  max-width: 250px;
   padding: 8px;
   margin-bottom: 10px;
 }
@@ -195,4 +202,24 @@ html, body {
 
 #route-planner button:hover {
   background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%; /* Sidebar takes full width on smaller screens */
+  }
+
+  #location-input, #search-button, #location-dropdown {
+    width: 100%; /* Make search bar and dropdown full width */
+    max-width: 100%; /* Remove max-width */
+  }
+
+  #route-planner {
+    width: 100%; /* Route planner takes full width */
+  }
+
+  #route-planner input, #route-planner button {
+    width: 100%;
+  }
 }

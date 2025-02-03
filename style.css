@@ -166,16 +166,6 @@ html, body {
   transform: translateY(0); /* Return to normal position on click */
 }
 
-/* Adjusting the position of the button on mobile screens */
-@media (max-width: 767px) {
-  #current-location-btn {
-    top: auto; /* Remove top distance */
-    bottom: 20px; /* Place button near the bottom of the screen */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%); /* Adjust for exact center alignment */
-  }
-}
-
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
@@ -186,5 +176,19 @@ html, body {
   #location-input, #search-button, #location-dropdown {
     width: 100%; /* Make search bar and dropdown full width */
     max-width: 100%; /* Remove max-width */
+  }
+  
+  #current-location-btn {
+    top: auto; /* Remove top distance */
+    bottom: 20px; /* Place button near the bottom of the screen */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for exact center alignment */
+  }
+}
+
+/* Adjust even further for very small screens */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px; /* Further reduce width */
   }
 }

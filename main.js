@@ -510,14 +510,11 @@ document.getElementById('submit-directions-button').addEventListener('click', ()
 
   // Check if the "From" location exists in the predefined coords array
   for (const location of coords) {
-    if (location.name === fromLocation) {
-      console.log(location.name);
-      console.log(fromLocation);
+    if (location.name.toLowerCase() === fromLocation.toLowerCase()) {
       fromCoords = getCoordinatesByName(location.name);
       // Set "From" coordinates
     }
-    if (location.name === toLocation) {
-      console.log(location.name);
+    if (location.name.toLowerCase() === toLocation.toLowerCase()) {
       toCoords = getCoordinatesByName(location.name); // Set "To" coordinates
     }
   }

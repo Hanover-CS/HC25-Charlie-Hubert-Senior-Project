@@ -1,9 +1,11 @@
-import { defineConfig } from 'cypress';
+import { defineConfig } from 'cypress'
+import vitePreprocessor from 'cypress-vite'
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
+      on('file:preprocessor', vitePreprocessor())
     },
-    supportFile: false,  // Disable the support file requirement
+      supportFile: false // Disable support file
   },
-});
+})

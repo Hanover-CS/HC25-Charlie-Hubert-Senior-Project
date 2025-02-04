@@ -62,7 +62,7 @@ const tileLayer = new TileLayer({
 });
 
 // Initialize the map
-const map = new Map({
+export const map = new Map({
   layers: [tileLayer, vectorLayer], 
   target: 'map',
   view: new View({
@@ -425,7 +425,7 @@ function searchLocation() {
           map.getView().setCenter(coordinates);
           map.getView().setZoom(18);
         } else {
-          throw new Error('Location not found in the specified area or existing features.');
+          alert('Location not found in the specified area or existing features.');
         }
       }
     })

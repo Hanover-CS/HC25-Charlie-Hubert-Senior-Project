@@ -39,7 +39,7 @@ import observatory from "./assets/images/culbertsonObservatory.jpg";
 import {getCoordinatesByName} from './coords';
 
 // Function to create a feature with a specified name, coordinates, and info
-const createFeature = (name, type, coords, scheduleLink, imageUrl, info) => {
+export const createFeature = (name, type, coords, scheduleLink, imageUrl, info) => {
   const feature = new Feature({
     geometry: new Point(fromLonLat(coords)),
     name: name,

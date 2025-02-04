@@ -62,7 +62,7 @@ const tileLayer = new TileLayer({
 });
 
 // Initialize the map
-export const map = new Map({
+const map = new Map({
   layers: [tileLayer, vectorLayer], 
   target: 'map',
   view: new View({

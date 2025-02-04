@@ -4,43 +4,32 @@ describe('Simulate Map Click', () => {
 
     const featureCoordinates = [-85.4612150852231, 38.7193707];
 
-    cy.window().then((win) => {
-      const map = win.map;
+    // Wait for map to be initialized properly
+    cy.window().its('map').should('exist').then((map) => {
+      expect(map).to.have.property('getPixelFromCoordinate');
 
-      if (!map || typeof map.getPixelFromCoordinate !== 'function') {
-        throw new Error('Map is not initialized properly or missing methods!');
-      }
-
-      cy.wrap(map).its('getView').should('be.a', 'function');
-
-      cy.wait(1000);
+      cy.wait(1000); // Allow the map to settle
 
       const pixel = map.getPixelFromCoordinate(featureCoordinates);
-      if (!pixel) {
-        console.error('Pixel could not be determined for the given coordinates:', featureCoordinates);
-        return;
-      }
+      expect(pixel).to.exist; // Ensure pixel conversion works
 
-      console.log('Pixel:', pixel);
-
-      const clickEvent = new MouseEvent('click', {
-        clientX: pixel[0],
-        clientY: pixel[1],
-        bubbles: true,
-        cancelable: true,
+      // Use OpenLayers native dispatch event
+      map.dispatchEvent({
+        type: 'click',
+        coordinate: featureCoordinates, 
+        pixel: pixel,
       });
 
-      const mapViewport = map.getViewport();
-      mapViewport.dispatchEvent(clickEvent);
+      // Wait for sidebar content to update
+      cy.get('#sidebar').should('have.class', 'open');
+
+      // Validate sidebar content
+      cy.get('#name').should('not.be.empty');
+      cy.get('#info').should('not.be.empty');
+      cy.get('#feature-image').should('be.visible');
+
+      cy.get('#name').should('contain', 'Expected Feature Name');
+      cy.get('#info').should('contain', 'Expected Feature Info');
     });
-
-    cy.get('#name').should('not.be.empty'); // Check if the name is populated
-    cy.get('#info').should('not.be.empty'); // Check if the info is populated
-    cy.get('#feature-image').should('be.visible'); 
-
-    cy.get('#name').should('contain', 'Expected Feature Name');
-    cy.get('#info').should('contain', 'Expected Feature Info');
-
-    cy.get('#sidebar').should('have.class', 'open'); 
   });
 });

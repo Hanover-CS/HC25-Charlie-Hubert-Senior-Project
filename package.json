@@ -9,7 +9,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "clean": "rm -rf dist",
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "test" : "npx cypress run"
   },
   "devDependencies": {
     "cypress": "^14.0.1",

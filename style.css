@@ -13,6 +13,7 @@ html, body {
   width: 100%;
 }
 
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -43,6 +44,98 @@ html, body {
   cursor: pointer;
 }
 
+/* Directions container */
+#directions-container {
+  margin-top: 20px;
+  display: none; /* Hidden initially */
+}
+
+/* Input fields */
+#from-input, #to-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white; 
+  color: black;
+}
+
+/* Submit button */
+#submit-directions-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#submit-directions-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+#submit-directions-button:active {
+  background-color: #004080; /* Even darker blue when clicked */
+}
+
+/* Get Directions button */
+#get-directions-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f10707; /* Red background to match border */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Add some space above the button */
+  margin-bottom: 20px;
+}
+
+#get-directions-button:hover {
+  background-color: #d90606; /* Darker red on hover */
+}
+
+#get-directions-button:active {
+  background-color: #b80505; /* Even darker red when clicked */
+}
+/* Input container */
+.input-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* Dropdown styles */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the input field */
+  left: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1001; /* Ensure dropdown appears above other elements */
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  color: black; /* Ensure readability */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* Highlight on hover */
+}
 #feature-image {
   margin-top: 20px;
   max-width: 100%;

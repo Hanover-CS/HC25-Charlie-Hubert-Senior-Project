@@ -20,9 +20,20 @@
         <div id="name">&nbsp;</div>
         <img id="feature-image" src="" alt="" style="max-width: 100%;">
         <div id="info">&nbsp;</div>
-        <div id="events">&nbsp;</div> </div>
+        <div id="events">&nbsp;</div>
+        <button id="get-directions-button">Get Directions</button>
+      <div id="directions-container" style="display: none;">
+        <div class="input-container">
+            <input type="text" id="from-input" placeholder="From..." />
+            <div id="from-dropdown" class="dropdown"></div> <!-- Dropdown for "From" -->
+          </div>
+          <div class="input-container">
+            <input type="text" id="to-input" placeholder="To..." />
+            <div id="to-dropdown" class="dropdown"></div> <!-- Dropdown for "To" -->
+          </div>
+        <button id="submit-directions-button">Submit</button>
+      </div>
     </div>
-
 
     <button id="current-location-btn">Go to Current Location</button>
 

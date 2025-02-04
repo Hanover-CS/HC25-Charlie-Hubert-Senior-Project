@@ -38,7 +38,7 @@ import {soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballF
   coulterFeature, scienceCenterFeature, pointFeature, hornerFeature, arenaFeature, classicHallFeature, scienceHallFeature, lynnHallFeature,
   blytheFeature, croweFeature, donnerFeature, wileyFeature, ideFeature, kpFeature, CulberstonObservatoryFeature, cfaFeature, ccFeature, ogleFeature
  , setFeatureStyle } from './features';
-import {coords} from './coords';
+import {coords, flipCoordinates ,getCoordinatesByName} from './coords';
 
 const featuresArray = [soccerFeature, stadiumFeature, tennisFeature, softballFeature, baseballFeature, phiDeltaThetaFeature, lambdaChiAlphaFeature,
   sigmaChiFeature, fijiFeature, chiOmegaFeature, adpiFeature, phimuFeature, thetaFeature, shoeboxFeature, ugFeature, greenwoodSuitesFeature, dugganLibraryFeature, 
@@ -66,12 +66,12 @@ const map = new Map({
   layers: [tileLayer, vectorLayer], 
   target: 'map',
   view: new View({
-    center: fromLonLat(coords.hanoverCollege), // Center on Hanover College
+    center: fromLonLat(getCoordinatesByName("Hanover College")), // Center on Hanover College
     zoom: 16,
     minZoom: 16,
   }),
 });
-window.map = map;
+
 // Function to set icon styles based on zoom level
 const setIconStyle = (feature, src) => {
   const zoom = map.getView().getZoom();
@@ -493,3 +493,42 @@ function goToCurrentLocation() {
 
 // Event listener for the "current location" button
 currentLocationButton.addEventListener('click', goToCurrentLocation);
+
+// Event listener for "Get Directions" button
+document.getElementById('get-directions-button').addEventListener('click', () => {
+  const directionsContainer = document.getElementById('directions-container');
+  directionsContainer.style.display = 'block'; // Show the "From" and "To" input fields
+});
+
+// Event listener for "Submit" button
+document.getElementById('submit-directions-button').addEventListener('click', () => {
+  const fromLocation = document.getElementById('from-input').value;
+  const toLocation = document.getElementById('to-input').value;
+
+  let fromCoords = null;
+  let toCoords = null;
+
+  // Check if the "From" location exists in the predefined coords array
+  for (const location of coords) {
+    if (location.name === fromLocation) {
+      console.log(location.name);
+      console.log(fromLocation);
+      fromCoords = getCoordinatesByName(location.name);
+      // Set "From" coordinates
+    }
+    if (location.name === toLocation) {
+      console.log(location.name);
+      toCoords = getCoordinatesByName(location.name); // Set "To" coordinates
+    }
+  }
+
+  // If either "From" or "To" location is not found, alert the user
+  if (!fromCoords) {
+    alert(`The "From" location "${fromLocation}" was not found.`);
+  } else if (!toCoords) {
+    alert(`The "To" location "${toLocation}" was not found.`);
+  } else {
+    // Both locations found, open Google Maps with directions (had to do it based on coords because duplicate names exist in the world)
+    window.open(`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(flipCoordinates(fromCoords))}&destination=${encodeURIComponent(flipCoordinates(toCoords))}`); // flip coordinates because google maps takes them the other way 
+  }
+});
